@@ -1,7 +1,14 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+import '@styles/globals.css'
+import { Inter, Inconsolata } from 'next/font/google'
+
+//Components
+import Navbar from '@components/Navbar'
+import Footer from '@components/Footer'
+import Sidebar from '@components/Sidebar'
+import SideMenu from '@components/SideMenu'
 
 const inter = Inter({ subsets: ['latin'] })
+const inconsolata = Inconsolata({ subsets: ['latin', 'latin-ext'], weights: ['400', '700'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,7 +18,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inconsolata.className + " bg-vs-gray-6 min-h-[100vh]"}>
+        <Navbar/>
+        <Sidebar/>
+        <SideMenu/>
+        {children}
+        <Footer/>
+      </body>
     </html>
   )
 }
