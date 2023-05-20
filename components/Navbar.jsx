@@ -1,7 +1,7 @@
 import Image from "next/image";
 const Navbar = () => {
   return (
-    <div className="z-10 bg-vs-gray-2 text-vs-white-1 font-sans w-screen h-10 absolute top-0 flex flex-row items-center justify-between">
+    <div className="z-20 bg-vs-gray-2 text-vs-white-1 font-sans w-screen h-10 absolute top-0 flex flex-row items-center justify-between">
       <div className="flex flex-row items-center gap-4">
         <Image className="cursor-pointer ml-2" src="/assets/logo.png" width={35} height={35} />
         <ul className="list-none flex flex-row">

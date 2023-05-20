@@ -5,7 +5,6 @@ import { Inter, Inconsolata } from 'next/font/google'
 import Navbar from '@components/Navbar'
 import Footer from '@components/Footer'
 import Sidebar from '@components/Sidebar'
-import SideMenu from '@components/SideMenu'
 
 const inter = Inter({ subsets: ['latin'] })
 const inconsolata = Inconsolata({ subsets: ['latin', 'latin-ext'], weights: ['400', '700'] })
@@ -21,7 +20,7 @@ export default function RootLayout({ children }) {
       <body className={inconsolata.className + " bg-vs-gray-6 min-h-[100vh]"}>
         <Navbar/>
         <Sidebar/>
-        <SideMenu/>
+        
         {children}
         <Footer/>
       </body>
