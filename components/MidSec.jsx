@@ -5,8 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 
 
 import SideMenu from "@components/SideMenu";
+import MainBody from "./MainBody";
 
-const Sidebar = () => {
+const MidSec = () => {
 
   const loadedData = [
     {header:"EDUCATION: QUALIFICATION"},
@@ -53,6 +54,8 @@ const Sidebar = () => {
 
   return (
     <>
+
+    {/* Sidebar */}
       <div className=" bg-vs-gray-3 absolute left-0 w-16 h-[100vh] z-10 pt-10 pb-6 flex flex-col justify-between">
         <div className="">
           <button onClick={()=>{handleSideMenu(0)}} className={ (open[0]? selected : deselected) + " flex items-center justify-center w-full py-4 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"}>
@@ -131,7 +134,7 @@ const Sidebar = () => {
           </div>
         </div>
 
-        <div onClick={()=>{handleSideMenu(6)}} className={ (open[6]? selected : deselected) + " flex items-center justify-center text-vs-white-2 w-full py-4 hover:text-vs-white-1 hover:cursor-pointer"}>
+        <div className={" flex items-center justify-center text-vs-white-2 w-full py-4 hover:text-vs-white-1 hover:cursor-pointer"}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="svg-icon w-8 transition-transform duration-500 ease-out hover:rotate-90"
@@ -144,6 +147,7 @@ const Sidebar = () => {
         </div>
       </div>
 
+    {/* Side Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -156,8 +160,20 @@ const Sidebar = () => {
           </motion.div>
         )}
       </AnimatePresence>
+        {true && (
+          <motion.div
+            className={`${isOpen? " w-[72.8%] " : " w-[95.5%] "} absolute right-0 top-10 transition-transform duration-200 ease-in-out`}
+            // initial={{ x: -350 }}
+            // animate={{ x: 0 }}
+            // exit={{ x: -350 }}
+            transition={{ duration: 0.2 }}
+            
+          >
+            <MainBody data={data}/>
+          </motion.div>
+        )}
     </>
   );
 };
 
-export default Sidebar;
+export default MidSec;
