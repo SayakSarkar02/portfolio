@@ -82,9 +82,9 @@ const Terminal = () => {
 
 
       {/* Meet Easter Egg */}
-      {meet && <div className='absolute top-0 left-0 w-[95vw] h-[93vh] bg-[#1f2122] flex items-center justify-center'>
-        <div onClick={()=>setMeet(false)} className='absolute top-2 right-2 w-8 h-8 bg-red-700 rounded-full text-white text-xl leading-none cursor-pointer hover:bg-red-500 text-center pb-1 flex items-center justify-center font-sans'>x</div>
-          <Image src="/assets/meet.png" width={1250} height={100}></Image>
+      {meet && <div style={{ width: window.innerWidth, height:window.innerHeight }} className='absolute top-0 left-0 bg-[#1f2122] flex items-center justify-center'>
+        <div onClick={()=>setMeet(false)} className='absolute top-20 right-32 w-8 h-8 bg-red-700 rounded-full text-white text-xl leading-none cursor-pointer hover:bg-red-500 text-center pb-1 flex items-center justify-center font-sans'>x</div>
+          <Image src="/assets/meet.png" width={1350} height={100}></Image>
       </div>}
 
 
