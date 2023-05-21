@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 
@@ -8,6 +8,27 @@ import SideMenu from "@components/SideMenu";
 import MainBody from "./MainBody";
 
 const MidSec = () => {
+
+  // Sidebar Height Issue Fixed
+  const [sidebarHeight, setSidebarHeight] = useState('100vh');
+  useEffect(() => {
+    const updateSidebarHeight = () => {
+      setSidebarHeight(`${window.innerHeight}px`);
+    };
+
+    if (typeof window !== 'undefined') {
+      // Set the initial height
+      updateSidebarHeight();
+
+      // Update the height on window resize
+      window.addEventListener('resize', updateSidebarHeight);
+
+      // Clean up the event listener on unmount
+      return () => {
+        window.removeEventListener('resize', updateSidebarHeight);
+      };
+    }
+  }, []);
 
   const loadedData = [
     {header:"EDUCATION: QUALIFICATION"},
@@ -56,7 +77,7 @@ const MidSec = () => {
     <>
 
     {/* Sidebar */}
-      <div className=" bg-vs-gray-3 absolute left-0 w-16 h-[100vh] z-10 pt-10 pb-6 flex flex-col justify-between">
+      <div style={{ height: sidebarHeight }} className={` sidebar bg-vs-gray-3 absolute left-0 w-16 z-10 pt-10 pb-6 flex flex-col justify-between`}>
         <div className="">
           <button onClick={()=>{handleSideMenu(0)}} className={ (open[0]? selected : deselected) + " flex items-center justify-center w-full py-4 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"}>
             <svg
@@ -162,7 +183,7 @@ const MidSec = () => {
       </AnimatePresence>
         {true && (
           <motion.div
-            className={`${isOpen? " w-[72.8%] xl:w-[80%] " : " w-[95.5%] xl:w-[96.8%] "} max-sm:w-[83.5%] z-0 absolute right-0 top-10 transition-transform duration-200 ease-in-out`}
+            className={`${isOpen? " w-[72.8%] xl:w-[80%] " : " w-[95.5%] xl:w-[96.8%] "} max-sm:w-[83.5%] z-0 absolute right-0 bottom-0 transition-transform duration-200 ease-in-out`}
             // initial={{ x: -350 }}
             // animate={{ x: 0 }}
             // exit={{ x: -350 }}

@@ -17,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inconsolata.className + " bg-vs-gray-6 min-h-[100vh] overflow-hidden "}>
+      <body className={inconsolata.className + " bg-vs-gray-6 h-screen overflow-hidden "}>
         <Navbar/>
         <MidSec/>
         {children}

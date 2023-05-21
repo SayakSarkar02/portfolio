@@ -58,7 +58,7 @@ const Terminal = () => {
   }
 
   return (
-    <div className="border-2 border-vs-gray-2 h-80 flex flex-col max-sm:px-4 max-sm:h-72 max-sm: px-8 py-3">
+    <div className="border-2 border-vs-gray-2 h-80 flex flex-col max-sm:px-4 max-sm:h-72 px-8 py-3">
       <ul className="flex flex-row gap-6 max-sm:gap-2">
         <li className="text-vs-white-2 cursor-pointer">PROBLEMS</li>
         <li className="text-vs-white-2 cursor-pointer">OUTPUT</li>
