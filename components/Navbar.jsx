@@ -3,7 +3,7 @@ const Navbar = ({toggleTerminal}) => {
   return (
     <div className="z-20 bg-vs-gray-2 text-vs-white-1 font-sans w-screen h-10 absolute top-0 flex flex-row items-center justify-between">
       <div className="flex flex-row items-center gap-4">
-        <Image className="cursor-pointer ml-2" src="/assets/logo.png" width={35} height={35} />
+        <Image className="cursor-pointer ml-2" src="/assets/logo.png" alt="logo" width={35} height={35} />
         <ul className="list-none flex flex-row max-sm:hidden">
           <li className="px-3 h-10 hover:bg-white/5 cursor-pointer flex items-center justify-center">
             File

@@ -1,14 +1,24 @@
 "use client";
 
+import useSound from 'use-sound';
 import { useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
-
+import jotunamila from '../public/assets/jotunamila.mp3';
+import kharahu from '../public/assets/kharahu.mp3';
 
 const Terminal = ({toggleTerminal}) => {
 
+  const soundOptions = {
+    volume: 0.3, // Set the volume level (0 to 1)
+    playbackRate: 1, // Set the playback rate (default: 1)
+    interrupt: false, // Allow playing multiple instances simultaneously (default: false)
+  };
+
+  const [play] = useSound(kharahu, soundOptions);
+
   const router = useRouter();
   const inputRef = useRef(null);
+  // const audioRef = useRef(null);
   const [meet, setMeet] = useState(false);
   const [output, setOutput] = useState([]);
   
@@ -19,6 +29,10 @@ const Terminal = ({toggleTerminal}) => {
     }
   };
 
+  // const playMusic = () => {
+    
+  // } 
+
   const handleTerminalRun = (e) => {
     e.preventDefault();
     console.log(inputRef.current.value);
@@ -28,7 +42,12 @@ const Terminal = ({toggleTerminal}) => {
       setOutput(temp);
       setTimeout(() => {
         setMeet(true);
+        setTimeout(() => {
+          play();
+        }, 1000);
       }, 2000);
+      console.log("Playing Music");
+      // audioRef?.current?.play();
       
     }
     else if(command.trim()==="npm meet"){
@@ -37,7 +56,6 @@ const Terminal = ({toggleTerminal}) => {
       setTimeout(() => {
         router.push('https://bit.ly/sayaksarkar');
       }, 1000);
-      
     }
     else if(command.trim()==="npm github"){
       const temp = [...output, {in:inputRef.current.value, out:"Going to Github..."}];
@@ -83,8 +101,8 @@ const Terminal = ({toggleTerminal}) => {
 
       <form onSubmit={handleTerminalRun} className="py-2 h-64 w-full overflow-y-scroll"onClick={terminalClick}>
         {output!==[]?
-        output.map((comdata)=>(
-          <div>
+        output.map((comdata, index)=>(
+          <div key={index}>
           <h3>{"Sayaks_Device"}<span className="text-vs-blue-3">{"/Desktop~ "}</span> $ <span className="bg-transparent w-[80%] text-vs-white-1 focus:border-none focus:outline-none" type="text">{comdata?.in}</span></h3>
           {comdata?.out}
         </div>
@@ -99,8 +117,8 @@ const Terminal = ({toggleTerminal}) => {
       {/* Meet Easter Egg */}
       {meet &&
       <div style={{ width: window.innerWidth, height:window.innerHeight }} className='absolute bottom-0 left-0 bg-[#1f2122] flex items-center justify-center'>
-        <div onClick={()=>setMeet(false)} className='absolute top-20 right-20 w-8 h-8 bg-red-700 rounded-full text-white text-xl leading-none cursor-pointer hover:bg-red-500 text-center pb-1 flex items-center justify-center font-sans'>x</div>
-        <img src="/assets/meet.png" className='h-[90%] self-end  object-cover'/>
+        <div onClick={()=>{setMeet(false);}} className='absolute top-20 right-20 w-8 h-8 bg-red-700 rounded-full text-white text-xl leading-none cursor-pointer hover:bg-red-500 text-center pb-1 flex items-center justify-center font-sans'>x</div>
+        <img src="/assets/meet.png" className='h-[90%] self-end  object-cover' alt="meet"/>
       </div>}
 
 

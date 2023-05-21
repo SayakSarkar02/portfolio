@@ -1,7 +1,7 @@
 import '@styles/globals.css'
 
 import { Inter, Inconsolata } from 'next/font/google'
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
 const inconsolata = Inconsolata({ subsets: ['latin', 'latin-ext'], weights: ['400', '700'] })
 
 export const metadata = {
