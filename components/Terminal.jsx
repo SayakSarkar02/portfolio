@@ -75,7 +75,7 @@ const Terminal = () => {
         </div>
         ))
         :null}
-        <h3 className='flex flex-row gap-2 flex-wrap'>{"Sayaks_Device"}<span className="text-vs-blue-3">{"/Desktop~ "}</span> $ <textarea ref={inputRef} placeholder='Try running: npm github or npm meet' className=" resize-none placeholder:text-vs-gray-2 bg-transparent w-[80%] max-sm:w-[100%] text-vs-white-1 focus:border-none focus:outline-none" type="text" /></h3>
+        <h3 className='flex flex-row gap-2 flex-wrap'>{"Sayaks_Device"}<span className="text-vs-blue-3">{"/Desktop~ "}</span> $ <input ref={inputRef} placeholder='Try: npm github / npm meet' className=" placeholder:text-vs-gray-2 bg-transparent w-[80%] max-sm:w-[100%] text-vs-white-1 focus:border-none focus:outline-none" type="text" /></h3>
 
       </form>
 
