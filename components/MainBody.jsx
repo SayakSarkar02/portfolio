@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion";
+import CodingArea from "./CodingArea";
 
 import Terminal from "./Terminal"
 
@@ -24,7 +25,9 @@ const MainBody = ({toggleTerminal, isTerminalOpen, setIsTerminalOpen}) => {
   return (
     <div  className=" text-vs-white-1 w-full flex flex-col justify-between h-[100vh]">
       <div className="w-full h-10 mt-10 bg-vs-gray-4"></div>
-      <div></div>
+      <div className=" font-vscode text-vs-white-2 m-10 mt-5 bg-blue-400/50 grow">
+        <CodingArea/>
+      </div>
       <AnimatePresence>
         {isTerminalOpen && <motion.div initial={{y:300}} animate={{y:0}} exit={{y:300}} transition={{ type: 'tween', damping: 10 }}
             ><Terminal toggleTerminal={toggleTerminal}/></motion.div> }
