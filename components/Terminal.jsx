@@ -5,12 +5,13 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
 
-const Terminal = () => {
+const Terminal = ({toggleTerminal}) => {
 
   const router = useRouter();
   const inputRef = useRef(null);
   const [meet, setMeet] = useState(false);
   const [output, setOutput] = useState([]);
+  
 
   const terminalClick = () => {
     if (inputRef.current) {
@@ -58,15 +59,29 @@ const Terminal = () => {
   }
 
   return (
-    <div className="border-2 border-vs-gray-2 h-80 flex flex-col max-sm:px-4 max-sm:h-72 px-8 py-3">
+    <div className="border-2 border-vs-gray-2 h-56 flex flex-col itsm max-sm:pl-4 max-sm:h-72 pl-8 py-3 relative bottom-6">
+      <div className='flex flex-row justify-between items-center'>
       <ul className="flex flex-row gap-6 max-sm:gap-2">
         <li className="text-vs-white-2 cursor-pointer">PROBLEMS</li>
         <li className="text-vs-white-2 cursor-pointer">OUTPUT</li>
         <li className="text-vs-white-2 cursor-pointer max-sm:hidden">DEBUG CONSOLE</li>
         <li className="text-vs-white-2 cursor-pointer border-transparent border-b-vs-blue-3 border-[1px]">TERMINAL</li>
       </ul>
+      <div className='px-4 cursor-pointer' onClick={toggleTerminal}>
+      <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              className="svg-icon"
+              style={{ width: "0.8em", height: "0.8em", verticalAlign: "middle" }}
+              overflow="hidden"
+              viewBox="0 0 1024 1024"
+            >
+              <path d="M960 170.56L869.44 80 512 437.44 154.56 80 64 170.56 421.44 528 64 885.44 154.56 976 512 618.56 869.44 976 960 885.44 602.56 528 960 170.56z"></path>
+            </svg>
+      </div>
+      </div>
 
-      <form onSubmit={handleTerminalRun} className="py-2 h-64 w-full"onClick={terminalClick}>
+      <form onSubmit={handleTerminalRun} className="py-2 h-64 w-full overflow-y-scroll"onClick={terminalClick}>
         {output!==[]?
         output.map((comdata)=>(
           <div>
@@ -75,7 +90,7 @@ const Terminal = () => {
         </div>
         ))
         :null}
-        <h3 className='flex flex-row gap-2 flex-wrap'>{"Sayaks_Device"}<span className="text-vs-blue-3">{"/Desktop~ "}</span> $ <input ref={inputRef} placeholder='Try: npm github / npm meet' className=" placeholder:text-vs-gray-2 bg-transparent w-[80%] max-sm:w-[100%] text-vs-white-1 focus:border-none focus:outline-none" type="text" /></h3>
+        <h3 className='flex flex-row gap-2 flex-wrap'>{"Sayaks_Device"}<span className="text-vs-blue-3">{"/Desktop~ "}</span> $ <input ref={inputRef} placeholder='Try: npm github / npm meet' className=" placeholder:text-vs-gray-2 bg-transparent sm:w-[60%] md:w-[70%] w-[100%] text-vs-white-1 focus:border-none focus:outline-none" type="text" /></h3>
 
       </form>
 

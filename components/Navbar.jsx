@@ -1,5 +1,5 @@
 import Image from "next/image";
-const Navbar = () => {
+const Navbar = ({toggleTerminal}) => {
   return (
     <div className="z-20 bg-vs-gray-2 text-vs-white-1 font-sans w-screen h-10 absolute top-0 flex flex-row items-center justify-between">
       <div className="flex flex-row items-center gap-4">
@@ -11,20 +11,20 @@ const Navbar = () => {
           <li className="px-3 h-10 hover:bg-white/5 cursor-pointer flex items-center justify-center">
             Edit
           </li>
-          <li className="px-3 h-10 hover:bg-white/5 cursor-pointer flex items-center justify-center">
-            Selection
+          <li onClick={toggleTerminal} className="px-3 h-10 hover:bg-white/5 cursor-pointer flex items-center justify-center">
+            Terminal
           </li>
           <li className="px-3 h-10 hover:bg-white/5 cursor-pointer flex items-center justify-center">
             View
           </li>
           {/* <li className="px-3 h-10 hover:bg-white/5 cursor-pointer flex items-center justify-center">
+            Selection
+          </li>
+          <li className="px-3 h-10 hover:bg-white/5 cursor-pointer flex items-center justify-center">
             Go
           </li>
           <li className="px-3 h-10 hover:bg-white/5 cursor-pointer flex items-center justify-center">
             Debug
-          </li>
-          <li className="px-3 h-10 hover:bg-white/5 cursor-pointer flex items-center justify-center">
-            Terminal
           </li>
           <li className="px-3 h-10 hover:bg-white/5 cursor-pointer flex items-center justify-center">
             Help

@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import SideMenu from "@components/SideMenu";
 import MainBody from "./MainBody";
 
-const MidSec = () => {
+const MidSec = ({toggleTerminal, isTerminalOpen, setIsTerminalOpen}) => {
 
   // Sidebar Height Issue Fixed
   const [sidebarHeight, setSidebarHeight] = useState('100vh');
@@ -190,7 +190,7 @@ const MidSec = () => {
             transition={{ duration: 0.2 }}
             
           >
-            <MainBody data={data}/>
+            <MainBody toggleTerminal={toggleTerminal} isTerminalOpen={isTerminalOpen} setIsTerminalOpen={setIsTerminalOpen} data={data}/>
           </motion.div>
         )}
     </>

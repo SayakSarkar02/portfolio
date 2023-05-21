@@ -1,4 +1,7 @@
+"use client";
+
 import '@styles/globals.css'
+import { useState } from 'react';
 import { Inter, Inconsolata } from 'next/font/google'
 
 //Components
@@ -14,12 +17,21 @@ export const metadata = {
   description: 'Hi, I am Sayak your friendly neighbourgood fullstack Web-developer',
 }
 
+
+
 export default function RootLayout({ children }) {
+
+  const [isTerminalOpen, setIsTerminalOpen] = useState(true);
+
+  const toggleTerminal = () => {
+    setIsTerminalOpen(prev=>!prev)
+  }
+
   return (
     <html lang="en">
       <body className={inconsolata.className + " bg-vs-gray-6 h-screen overflow-hidden "}>
-        <Navbar/>
-        <MidSec/>
+        <Navbar toggleTerminal={toggleTerminal} isTerminalOpen={isTerminalOpen}/>
+        <MidSec toggleTerminal={toggleTerminal} isTerminalOpen={isTerminalOpen} setIsTerminalOpen={setIsTerminalOpen}/>
         {children}
         <Footer/>
       </body>
