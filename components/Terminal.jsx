@@ -58,11 +58,11 @@ const Terminal = () => {
   }
 
   return (
-    <div className="border-2 border-vs-gray-2 h-80 flex flex-col px-8 py-3">
-      <ul className="flex flex-row gap-6">
+    <div className="border-2 border-vs-gray-2 h-80 flex flex-col max-sm:px-4 max-sm:h-72 max-sm: px-8 py-3">
+      <ul className="flex flex-row gap-6 max-sm:gap-2">
         <li className="text-vs-white-2 cursor-pointer">PROBLEMS</li>
         <li className="text-vs-white-2 cursor-pointer">OUTPUT</li>
-        <li className="text-vs-white-2 cursor-pointer">DEBUG CONSOLE</li>
+        <li className="text-vs-white-2 cursor-pointer max-sm:hidden">DEBUG CONSOLE</li>
         <li className="text-vs-white-2 cursor-pointer border-transparent border-b-vs-blue-3 border-[1px]">TERMINAL</li>
       </ul>
 
@@ -75,7 +75,7 @@ const Terminal = () => {
         </div>
         ))
         :null}
-        <h3>{"Sayaks_Device"}<span className="text-vs-blue-3">{"/Desktop~ "}</span> $ <input ref={inputRef} placeholder='Try running: npm github or npm meet' className=" placeholder:text-vs-gray-2 bg-transparent w-[80%] text-vs-white-1 focus:border-none focus:outline-none" type="text" /></h3>
+        <h3 className='flex flex-row gap-2 flex-wrap'>{"Sayaks_Device"}<span className="text-vs-blue-3">{"/Desktop~ "}</span> $ <textarea ref={inputRef} placeholder='Try running: npm github or npm meet' className=" resize-none placeholder:text-vs-gray-2 bg-transparent w-[80%] max-sm:w-[100%] text-vs-white-1 focus:border-none focus:outline-none" type="text" /></h3>
 
       </form>
 

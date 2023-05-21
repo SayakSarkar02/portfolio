@@ -4,7 +4,7 @@ const Navbar = () => {
     <div className="z-20 bg-vs-gray-2 text-vs-white-1 font-sans w-screen h-10 absolute top-0 flex flex-row items-center justify-between">
       <div className="flex flex-row items-center gap-4">
         <Image className="cursor-pointer ml-2" src="/assets/logo.png" width={35} height={35} />
-        <ul className="list-none flex flex-row">
+        <ul className="list-none flex flex-row max-sm:hidden">
           <li className="px-3 h-10 hover:bg-white/5 cursor-pointer flex items-center justify-center">
             File
           </li>
@@ -17,7 +17,7 @@ const Navbar = () => {
           <li className="px-3 h-10 hover:bg-white/5 cursor-pointer flex items-center justify-center">
             View
           </li>
-          <li className="px-3 h-10 hover:bg-white/5 cursor-pointer flex items-center justify-center">
+          {/* <li className="px-3 h-10 hover:bg-white/5 cursor-pointer flex items-center justify-center">
             Go
           </li>
           <li className="px-3 h-10 hover:bg-white/5 cursor-pointer flex items-center justify-center">
@@ -28,12 +28,16 @@ const Navbar = () => {
           </li>
           <li className="px-3 h-10 hover:bg-white/5 cursor-pointer flex items-center justify-center">
             Help
-          </li>
+          </li> */}
         </ul>
       </div>
 
-      <div className="flex items-center justify-center cursor-pointer">
+      <div className="max-md:hidden flex items-center justify-center cursor-pointer">
         Sayak_Sarkar - Full_Stack.developer
+      </div>
+
+      <div className="md:hidden flex items-center justify-center cursor-pointer">
+        Sayak_Sarkar.dev
       </div>
 
       <div>

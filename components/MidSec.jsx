@@ -162,7 +162,7 @@ const MidSec = () => {
       </AnimatePresence>
         {true && (
           <motion.div
-            className={`${isOpen? " w-[72.8%] " : " w-[95.5%] "} absolute right-0 top-10 transition-transform duration-200 ease-in-out`}
+            className={`${isOpen? " w-[72.8%] xl:w-[80%] " : " w-[95.5%] xl:w-[96.8%] "} max-sm:w-[83.5%] z-0 absolute right-0 top-10 transition-transform duration-200 ease-in-out`}
             // initial={{ x: -350 }}
             // animate={{ x: 0 }}
             // exit={{ x: -350 }}
