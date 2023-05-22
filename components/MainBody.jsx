@@ -25,7 +25,7 @@ const MainBody = ({toggleTerminal, isTerminalOpen, setIsTerminalOpen}) => {
   return (
     <div  className=" text-vs-white-1 w-full flex flex-col justify-between h-[100vh]">
       <div className="w-full h-10 mt-10 bg-vs-gray-4"></div>
-      <div className=" font-vscode text-vs-white-2 m-10 mt-5 bg-blue-400/50 grow">
+      <div className=" font-vscode text-vs-white-2 m-10 mt-5 transition-transform duration-1000 grow">
         <CodingArea/>
       </div>
       <AnimatePresence>
