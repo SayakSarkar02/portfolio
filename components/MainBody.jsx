@@ -4,14 +4,20 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion";
 import CodingArea from "./CodingArea";
 
+import { useSelector,useDispatch } from "react-redux"
+import {toggleTerminal} from "@app/GlobalRedux/Features/terminal/terminalToggle"
+
 import Terminal from "./Terminal"
 
-const MainBody = ({toggleTerminal, isTerminalOpen, setIsTerminalOpen}) => {
+const MainBody = () => {
+
+  const isTerminalOpen = useSelector((state) => state.terminalToggle.value);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.ctrlKey && event.key === '`') {
-        setIsTerminalOpen((prevOpen) => !prevOpen);
+        dispatch(toggleTerminal());
       }
     };
 
@@ -30,7 +36,7 @@ const MainBody = ({toggleTerminal, isTerminalOpen, setIsTerminalOpen}) => {
       </div>
       <AnimatePresence>
         {isTerminalOpen && <motion.div initial={{y:300}} animate={{y:0}} exit={{y:300}} transition={{ type: 'tween', damping: 10 }}
-            ><Terminal toggleTerminal={toggleTerminal}/></motion.div> }
+            ><Terminal /></motion.div> }
       </AnimatePresence>
     </div>
   )

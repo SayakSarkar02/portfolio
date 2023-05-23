@@ -10,12 +10,12 @@ export const terminalToggle = createSlice({
   name: "terminalToggle",
   initialState,
   reducers: {
-    toggle: (state) => {
+    toggleTerminal: (state) => {
       state.value = !state.value;
     }
   },
 });
 
-export const { toggle } = terminalToggle.actions;
+export const { toggleTerminal } = terminalToggle.actions;
 
 export default terminalToggle.reducer;

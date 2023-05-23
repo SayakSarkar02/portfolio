@@ -1,5 +1,13 @@
+"use client"
+
+import { useDispatch } from "react-redux"
+import {toggleTerminal} from "@app/GlobalRedux/Features/terminal/terminalToggle"
+
 import Image from "next/image";
-const Navbar = ({toggleTerminal}) => {
+const Navbar = () => {
+
+  const dispatch = useDispatch();
+
   return (
     <div className="z-20 bg-vs-gray-2 text-vs-white-1 font-sans w-screen h-10 absolute top-0 flex flex-row items-center justify-between">
       <div className="flex flex-row items-center gap-4">
@@ -11,7 +19,7 @@ const Navbar = ({toggleTerminal}) => {
           <li className="px-3 h-10 hover:bg-white/5 cursor-pointer flex items-center justify-center">
             Edit
           </li>
-          <li onClick={toggleTerminal} className="px-3 h-10 hover:bg-white/5 cursor-pointer flex items-center justify-center">
+          <li onClick={()=>{dispatch(toggleTerminal())}} className="px-3 h-10 hover:bg-white/5 cursor-pointer flex items-center justify-center">
             Terminal
           </li>
           <li className="px-3 h-10 hover:bg-white/5 cursor-pointer flex items-center justify-center">
