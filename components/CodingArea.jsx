@@ -1,18 +1,15 @@
 "use client"
 
 import { useSelector, useDispatch } from "react-redux"
-import {increment, decrement, incrementByAmount} from "@app/GlobalRedux/Features/counter/counterSlice"
+import {arrSelect} from "@app/GlobalRedux/Features/counter/counterSlice"
 
 const CodingArea = () => {
-  const count = useSelector((state) => state.counter.value);
+  const open = useSelector((state) => state.counter.isOpen);
   const dispatch = useDispatch();
 
   return (
-    <div className="flex flex-col text-center">
-      <button className="" onClick={()=>{dispatch(increment())}}>Increment</button>
-      <span>{count}</span>
-      <button className="" onClick={()=>{dispatch(decrement())}}>Decrement</button>
-      <button className="" onClick={()=>{dispatch(incrementByAmount(2))}}>Increment by 2</button>
+    <div className="flex flex-col text-center justify-center items-center">
+      Coding Area
     </div>
   )
 }

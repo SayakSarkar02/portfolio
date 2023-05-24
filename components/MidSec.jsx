@@ -7,9 +7,19 @@ import { motion, AnimatePresence } from "framer-motion";
 import SideMenu from "@components/SideMenu";
 import MainBody from "./MainBody";
 
-const MidSec = ({toggleTerminal, isTerminalOpen, setIsTerminalOpen}) => {
+import { useSelector, useDispatch } from "react-redux"
+import {
+  // increment, decrement, incrementByAmount,
+   arrSelect} from "@app/GlobalRedux/Features/counter/counterSlice"
 
-  // Sidebar Height Issue Fixed
+const MidSec = (
+  // {toggleTerminal, isTerminalOpen, setIsTerminalOpen}
+  ) => {
+
+    const open = useSelector((state) => state.counter.isOpen);
+    const dispatch = useDispatch();
+
+  // Sidebar Height Issue Fix
   const [sidebarHeight, setSidebarHeight] = useState('100vh');
   useEffect(() => {
     const updateSidebarHeight = () => {
@@ -42,36 +52,36 @@ const MidSec = ({toggleTerminal, isTerminalOpen, setIsTerminalOpen}) => {
   const selected = "border-white text-vs-white-1 border-l-[3px]"
   const deselected = "border-l-[3px] border-transparent text-vs-white-2"
 
-  const [isOpen, setIsOpen] = useState(false);
-  const [open, setOpen] = useState([false,false,false,false,false,false]);
-  const [data, setData] = useState(null);
+  // const [isOpen, setIsOpen] = useState(false);
+  // const [open, setOpen] = useState([false,false,false,false,false,false]);
+  // const [data, setData] = useState(null);
 
-  const toggleOpen = () => {
-    setIsOpen(prevState => !prevState);
-  };
+  // const toggleOpen = () => {
+  //   setIsOpen(prevState => !prevState);
+  // };
 
-  const setOpenArray = (i) => {
-    let temp = [false,false,false,false,false,false];
-    temp[i] = true;
-    setOpen(temp);
-  };
+  // const setOpenArray = (i) => {
+  //   let temp = [false,false,false,false,false,false];
+  //   temp[i] = true;
+  //   setOpen(temp);
+  // };
 
-  const handleSideMenu = (i) => {
-    if(!isOpen){
-      setData(loadedData[i]);
-      setOpenArray(i);
-      toggleOpen();
-    }
-    else if(isOpen && open[i]){
-      let temp = [false,false,false,false,false,false];
-      setOpen(temp);
-      toggleOpen();
-    }
-    else{
-      setOpenArray(i);
-      setData(loadedData[i]);
-    }
-  };
+  // const handleSideMenu = (i) => {
+  //   if(!isOpen){
+  //     setData(loadedData[i]);
+  //     setOpenArray(i);
+  //     toggleOpen();
+  //   }
+  //   else if(isOpen && open[i]){
+  //     let temp = [false,false,false,false,false,false];
+  //     setOpen(temp);
+  //     toggleOpen();
+  //   }
+  //   else{
+  //     setOpenArray(i);
+  //     setData(loadedData[i]);
+  //   }
+  // };
 
   return (
     <>
@@ -79,7 +89,13 @@ const MidSec = ({toggleTerminal, isTerminalOpen, setIsTerminalOpen}) => {
     {/* Sidebar */}
       <div style={{ height: sidebarHeight }} className={` sidebar bg-vs-gray-3 absolute left-0 w-16 z-10 pt-10 pb-6 flex flex-col justify-between`}>
         <div className="">
-          <button onClick={()=>{handleSideMenu(0)}} className={ (open[0]? selected : deselected) + " flex items-center justify-center w-full py-4 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"}>
+          <button 
+          onClick={()=>{dispatch(arrSelect(0))}}
+          // onClick={()=>{handleSideMenu(0)}}
+          className={
+            // (open[0]? selected : deselected)
+            (open==0? selected : deselected)
+            + " flex items-center justify-center w-full py-4 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="svg-icon w-8 flex items-center justify-center"
@@ -91,7 +107,7 @@ const MidSec = ({toggleTerminal, isTerminalOpen, setIsTerminalOpen}) => {
             </svg>
           </button>
 
-          <div onClick={()=>{handleSideMenu(1)}} className={ (open[1]? selected : deselected) + " flex items-center justify-center text-vs-white-2 w-full py-3 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"}>
+          <div onClick={()=>{dispatch(arrSelect(1))}} className={ (open==1? selected : deselected) + " flex items-center justify-center text-vs-white-2 w-full py-3 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="svg-icon w-10"
@@ -105,7 +121,7 @@ const MidSec = ({toggleTerminal, isTerminalOpen, setIsTerminalOpen}) => {
             </svg>
           </div>
 
-          <div onClick={()=>{handleSideMenu(2)}} className={ (open[2]? selected : deselected) + " flex items-center justify-center text-vs-white-2 w-full py-4 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"}>
+          <div onClick={()=>{dispatch(arrSelect(2))}} className={ (open==2? selected : deselected) + " flex items-center justify-center text-vs-white-2 w-full py-4 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="svg-icon w-8"
@@ -118,7 +134,7 @@ const MidSec = ({toggleTerminal, isTerminalOpen, setIsTerminalOpen}) => {
             </svg>
           </div>
 
-          <div onClick={()=>{handleSideMenu(3)}} className={ (open[3]? selected : deselected) + " flex items-center justify-center text-vs-white-2 w-full py-4 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"}>
+          <div onClick={()=>{dispatch(arrSelect(3))}} className={ (open==3? selected : deselected) + " flex items-center justify-center text-vs-white-2 w-full py-4 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="svg-icon w-8"
@@ -130,7 +146,7 @@ const MidSec = ({toggleTerminal, isTerminalOpen, setIsTerminalOpen}) => {
             </svg>
           </div>
 
-          <div onClick={()=>{handleSideMenu(4)}} className={ (open[4]? selected : deselected) + " flex items-center justify-center text-vs-white-2 w-full py-4 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"}>
+          <div onClick={()=>{dispatch(arrSelect(4))}} className={ (open==4? selected : deselected) + " flex items-center justify-center text-vs-white-2 w-full py-4 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="svg-icon w-8"
@@ -142,7 +158,7 @@ const MidSec = ({toggleTerminal, isTerminalOpen, setIsTerminalOpen}) => {
             </svg>
           </div>
 
-          <div onClick={()=>{handleSideMenu(5)}} className={ (open[5]? selected : deselected) + " flex items-center justify-center text-vs-white-2 w-full py-4 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"}>
+          <div onClick={()=>{dispatch(arrSelect(5))}} className={ (open==5? selected : deselected) + " flex items-center justify-center text-vs-white-2 w-full py-4 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="svg-icon w-8"
@@ -170,27 +186,30 @@ const MidSec = ({toggleTerminal, isTerminalOpen, setIsTerminalOpen}) => {
 
     {/* Side Menu */}
       <AnimatePresence>
-        {isOpen && (
+        {open!=-1 && (
           <motion.div
             initial={{ x: -350 }}
             animate={{ x: 0 }}
             exit={{ x: -350 }}
             transition={{ duration: 0.2 }}
           >
-            <SideMenu data={data}/>
+            <SideMenu data={open===1?"":loadedData[open]}/>
           </motion.div>
         )}
       </AnimatePresence>
         {true && (
           <motion.div
-            className={`${isOpen? " w-[72.8%] md:w-[64%] lg:w-[70%] xl:w-[74%] " : " w-[95.5%]  xl:w-[96.8%] "} max-sm:w-[83.5%] z-0 absolute right-0 bottom-0 transition-transform duration-200 ease-in-out`}
+            className={`${open!=-1? " w-[72.8%] md:w-[64%] lg:w-[70%] xl:w-[74%] " : " w-[95.5%]  xl:w-[96.8%] "} max-sm:w-[83.5%] z-0 absolute right-0 bottom-0 transition-transform duration-200 ease-in-out`}
             // initial={{ x: -350 }}
             // animate={{ x: 0 }}
             // exit={{ x: -350 }}
             transition={{ duration: 0.2 }}
             
           >
-            <MainBody toggleTerminal={toggleTerminal} isTerminalOpen={isTerminalOpen} setIsTerminalOpen={setIsTerminalOpen} data={data}/>
+            <MainBody
+            // toggleTerminal={toggleTerminal} isTerminalOpen={isTerminalOpen} setIsTerminalOpen={setIsTerminalOpen}
+            data={open===1?"":loadedData[open]}
+            />
           </motion.div>
         )}
     </>
