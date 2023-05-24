@@ -154,7 +154,7 @@ const MidSec = (
             exit={{ x: -350 }}
             transition={{ duration: 0.2 }}
           >
-            <SideMenu data={open===1?"":loadedData[open]}/>
+            <SideMenu data={open===-1?"":loadedData[open]}/>
           </motion.div>
         )}
       </AnimatePresence>
@@ -169,7 +169,7 @@ const MidSec = (
           >
             <MainBody
             // toggleTerminal={toggleTerminal} isTerminalOpen={isTerminalOpen} setIsTerminalOpen={setIsTerminalOpen}
-            data={open===1?"":loadedData[open]}
+            data={open===-1?"":loadedData[open]}
             />
           </motion.div>
         )}
