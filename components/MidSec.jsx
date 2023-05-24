@@ -8,12 +8,9 @@ import SideMenu from "@components/SideMenu";
 import MainBody from "./MainBody";
 
 import { useSelector, useDispatch } from "react-redux"
-import {
-  // increment, decrement, incrementByAmount,
-   arrSelect} from "@app/GlobalRedux/Features/counter/counterSlice"
+import {arrSelect} from "@app/GlobalRedux/Features/counter/counterSlice"
 
 const MidSec = (
-  // {toggleTerminal, isTerminalOpen, setIsTerminalOpen}
   ) => {
 
     const open = useSelector((state) => state.counter.isOpen);
@@ -52,37 +49,6 @@ const MidSec = (
   const selected = "border-white text-vs-white-1 border-l-[3px]"
   const deselected = "border-l-[3px] border-transparent text-vs-white-2"
 
-  // const [isOpen, setIsOpen] = useState(false);
-  // const [open, setOpen] = useState([false,false,false,false,false,false]);
-  // const [data, setData] = useState(null);
-
-  // const toggleOpen = () => {
-  //   setIsOpen(prevState => !prevState);
-  // };
-
-  // const setOpenArray = (i) => {
-  //   let temp = [false,false,false,false,false,false];
-  //   temp[i] = true;
-  //   setOpen(temp);
-  // };
-
-  // const handleSideMenu = (i) => {
-  //   if(!isOpen){
-  //     setData(loadedData[i]);
-  //     setOpenArray(i);
-  //     toggleOpen();
-  //   }
-  //   else if(isOpen && open[i]){
-  //     let temp = [false,false,false,false,false,false];
-  //     setOpen(temp);
-  //     toggleOpen();
-  //   }
-  //   else{
-  //     setOpenArray(i);
-  //     setData(loadedData[i]);
-  //   }
-  // };
-
   return (
     <>
 
@@ -90,12 +56,7 @@ const MidSec = (
       <div style={{ height: sidebarHeight }} className={` sidebar bg-vs-gray-3 absolute left-0 w-16 z-10 pt-10 pb-6 flex flex-col justify-between`}>
         <div className="">
           <button 
-          onClick={()=>{dispatch(arrSelect(0))}}
-          // onClick={()=>{handleSideMenu(0)}}
-          className={
-            // (open[0]? selected : deselected)
-            (open==0? selected : deselected)
-            + " flex items-center justify-center w-full py-4 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"}>
+          onClick={()=>{dispatch(arrSelect(0))}} className={(open==0? selected : deselected) + " flex items-center justify-center w-full py-4 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="svg-icon w-8 flex items-center justify-center"
