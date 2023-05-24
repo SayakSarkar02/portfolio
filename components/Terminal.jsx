@@ -87,7 +87,7 @@ const Terminal = () => {
   return (
     <div className="border-2 border-vs-gray-2 h-56 flex flex-col itsm max-sm:pl-4 max-sm:h-72 pl-8 py-3 relative bottom-6">
       <div className='flex flex-row justify-between items-center'>
-      <ul className="flex flex-row gap-6 max-sm:gap-2">
+      <ul className="flex flex-row gap-6 max-sm:gap-2 select-none">
         <li className="text-vs-white-2 cursor-pointer">PROBLEMS</li>
         <li className="text-vs-white-2 cursor-pointer">OUTPUT</li>
         <li className="text-vs-white-2 cursor-pointer max-sm:hidden">DEBUG CONSOLE</li>
