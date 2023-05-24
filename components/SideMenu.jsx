@@ -2,7 +2,7 @@
 
 const SideMenu = ({data}) => {
   return (
-    <div className=" bg-vs-gray-5 absolute left-[65px] w-80 h-[100vh] z-10 mt-8 shadow-lg p-5 transition-all ease-out duration-700">
+    <div className=" bg-vs-gray-5  left-[65px] w-full h-[100vh] z-10 mt-8 shadow-lg p-5 transition-all ease-out duration-700">
       <div className="flex flex-row items-center justify-between">
         <h3 className=" font-sans text-vs-white-1 font-light">{data?.header}</h3>
         <h3 className=" font-sans text-vs-white-1 font-light mb-2 cursor-pointer">...</h3>

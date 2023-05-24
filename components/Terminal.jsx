@@ -6,36 +6,47 @@ import { useRouter } from 'next/navigation';
 import jotunamila from '../public/assets/jotunamila.mp3';
 import kharahu from '../public/assets/kharahu.mp3';
 
-const Terminal = ({toggleTerminal}) => {
+import { useDispatch } from "react-redux";
+import {toggleTerminal} from "@app/GlobalRedux/Features/terminal/terminalToggle";
 
+const Terminal = () => {
+
+  //Redux State Handling
+  const dispatch = useDispatch();
+
+  //Music Play Settings
   const soundOptions = {
     volume: 0.3, // Set the volume level (0 to 1)
     playbackRate: 1, // Set the playback rate (default: 1)
     interrupt: false, // Allow playing multiple instances simultaneously (default: false)
   };
 
+  //Music Play Hook
   const [play, { stop }] = useSound(kharahu, soundOptions);
 
+  //Navigate to different pages and links
   const router = useRouter();
-  const inputRef = useRef(null);
-  // const audioRef = useRef(null);
-  const [meet, setMeet] = useState(false);
-  const [output, setOutput] = useState([]);
-  
 
+  //Input Reference of terminal input tag
+  const inputRef = useRef(null);
+
+  //Output Array to store used commands
+  const [output, setOutput] = useState([]);
+
+  //To check if meet Window is open or not
+  const [meet, setMeet] = useState(false);
+  
+  //Focus on terminal when clicked
   const terminalClick = () => {
     if (inputRef.current) {
       inputRef.current.focus();
     }
   };
 
-  // const playMusic = () => {
-    
-  // } 
-
+  //Commands for terminal
   const handleTerminalRun = (e) => {
     e.preventDefault();
-    console.log(inputRef.current.value);
+
     const command = inputRef.current.value;
     if(command.trim() === "npm run meet"){
       const temp = [...output, {in:inputRef.current.value, out:"Taking to Sayak's Favourite Place..."}];
@@ -47,8 +58,6 @@ const Terminal = ({toggleTerminal}) => {
         }, 1000);
       }, 2000);
       console.log("Playing Music");
-      // audioRef?.current?.play();
-      
     }
     else if(command.trim()==="npm meet"){
       const temp = [...output, {in:inputRef.current.value, out:"Setting up a Meet with Sayak..."}];
@@ -63,7 +72,6 @@ const Terminal = ({toggleTerminal}) => {
       setTimeout(() => {
         router.push('https://github.com/sayaksarkar02');
       }, 1000);
-      
     }
     else if(command.trim()==="clear"){
       setOutput([]);
@@ -79,23 +87,24 @@ const Terminal = ({toggleTerminal}) => {
   return (
     <div className="border-2 border-vs-gray-2 h-56 flex flex-col itsm max-sm:pl-4 max-sm:h-72 pl-8 py-3 relative bottom-6">
       <div className='flex flex-row justify-between items-center'>
-      <ul className="flex flex-row gap-6 max-sm:gap-2">
+      <ul className="flex flex-row gap-6 max-sm:gap-2 select-none">
         <li className="text-vs-white-2 cursor-pointer">PROBLEMS</li>
         <li className="text-vs-white-2 cursor-pointer">OUTPUT</li>
         <li className="text-vs-white-2 cursor-pointer max-sm:hidden">DEBUG CONSOLE</li>
         <li className="text-vs-white-2 cursor-pointer border-transparent border-b-vs-blue-3 border-[1px]">TERMINAL</li>
       </ul>
-      <div className='px-4 cursor-pointer' onClick={toggleTerminal}>
+      <div className='px-4 cursor-pointer' onClick={()=>{dispatch(toggleTerminal())}}
+      >
       <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              className="svg-icon"
-              style={{ width: "0.8em", height: "0.8em", verticalAlign: "middle" }}
-              overflow="hidden"
-              viewBox="0 0 1024 1024"
-            >
-              <path d="M960 170.56L869.44 80 512 437.44 154.56 80 64 170.56 421.44 528 64 885.44 154.56 976 512 618.56 869.44 976 960 885.44 602.56 528 960 170.56z"></path>
-            </svg>
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          className="svg-icon"
+          style={{ width: "0.8em", height: "0.8em", verticalAlign: "middle" }}
+          overflow="hidden"
+          viewBox="0 0 1024 1024"
+        >
+          <path d="M960 170.56L869.44 80 512 437.44 154.56 80 64 170.56 421.44 528 64 885.44 154.56 976 512 618.56 869.44 976 960 885.44 602.56 528 960 170.56z"></path>
+        </svg>
       </div>
       </div>
 
@@ -112,16 +121,12 @@ const Terminal = ({toggleTerminal}) => {
 
       </form>
 
-
-
       {/* Meet Easter Egg */}
       {meet &&
       <div style={{ width: window.innerWidth, height:window.innerHeight }} className='absolute bottom-0 left-0 bg-[#1f2122] flex items-center justify-center'>
         <div onClick={()=>{setMeet(false);stop();}} className='absolute top-20 right-20 w-8 h-8 bg-red-700 rounded-full text-white text-xl leading-none cursor-pointer hover:bg-red-500 text-center pb-1 flex items-center justify-center font-sans'>x</div>
         <img src="/assets/meet.png" className='h-[90%] self-end  object-cover' alt="meet"/>
       </div>}
-
-
 
     </div>
   )
