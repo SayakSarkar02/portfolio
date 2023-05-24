@@ -1,12 +1,14 @@
 "use client";
 
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from'./Features/counter/counterSlice';
+import sidebarReducer from'./Features/sidebar/sidebarSlice';
+import sidebarMenuReducer from'./Features/sidebar/sidebarMenu';
 import terminalToggleReducer from'./Features/terminal/terminalToggle';
 
 export const store = configureStore({
     reducer: {
-        counter: counterReducer,
+        sidebar: sidebarReducer,
+        menu: sidebarMenuReducer,
         terminalToggle: terminalToggleReducer,
     },
 });

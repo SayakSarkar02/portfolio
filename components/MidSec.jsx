@@ -7,12 +7,12 @@ import SideMenu from "@components/SideMenu";
 import MainBody from "./MainBody";
 
 import { useSelector, useDispatch } from "react-redux"
-import {arrSelect} from "@app/GlobalRedux/Features/counter/counterSlice"
+import {arrSelect} from "@app/GlobalRedux/Features/sidebar/sidebarSlice"
 
 const MidSec = (
   ) => {
 
-    const open = useSelector((state) => state.counter.isOpen);
+    const open = useSelector((state) => state.sidebar.isOpen);
     const dispatch = useDispatch();
 
   // Sidebar Height Issue Fix
