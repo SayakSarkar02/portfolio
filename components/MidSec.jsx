@@ -165,7 +165,7 @@ const MidSec = (
       {/* <AnimatePresence> */}
         { (
           <div
-          className={(open!==-1? "w-1/4": "overflow-clip w-0") + " transition-all duration-300 ease-in-out "}
+          className={(open!==-1? "max-sm:w-full sm:w-1/3 lg:w-1/4 2xl:w-2/12": "overflow-clip w-0") + " transition-all duration-300 ease-in-out "}
             
           >
             <SideMenu data={open===-1?"":loadedData[open]}/>
@@ -174,7 +174,7 @@ const MidSec = (
       {/* </AnimatePresence> */}
         
           <div
-            className={`${open>-1? " w-3/4 " : " w-full "} transition-all duration-300 ease-in-out`}
+            className={`${open>-1? "max-sm:hidden max-sm:w-0 sm:w-2/3 lg:w-3/4 2xl:w-10/12" : " w-full "} transition-all duration-300 ease-in-out`}
             
             
           >
