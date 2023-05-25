@@ -10,11 +10,11 @@ import TechStacks from "./Details/TechStacks";
 import WorkExperience from "./Details/WorkExperience";
 
 const CodingArea = () => {
-  const open = useSelector((state) => state.sidebar.isOpen);
+  const open = useSelector((state) => state.sidebar.whatOpen);
   const dispatch = useDispatch();
 
   return (
-    <div className="flex flex-col text-center justify-center items-center">
+    <div className="flex flex-col ">
       {open===0 && <Education/>}
       {open===1 && <Achievements/>}
       {open===2 && <Contact/>}

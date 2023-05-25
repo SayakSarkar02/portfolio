@@ -2,59 +2,58 @@
 
 import { useState, useEffect } from "react";
 
-
 import SideMenu from "@components/SideMenu";
 import MainBody from "./MainBody";
 
-import { useSelector, useDispatch } from "react-redux"
-import {arrSelect} from "@app/GlobalRedux/Features/sidebar/sidebarSlice"
+import { useSelector, useDispatch } from "react-redux";
+import { arrSelect } from "@app/GlobalRedux/Features/sidebar/sidebarSlice";
 
-const MidSec = (
-  ) => {
-
-    const open = useSelector((state) => state.sidebar.isOpen);
-    const dispatch = useDispatch();
+const MidSec = () => {
+  const open = useSelector((state) => state.sidebar.whatOpen);
+  const isOpen = useSelector((state) => state.sidebar.isOpen);
+  const dispatch = useDispatch();
 
   // Sidebar Height Issue Fix
-  const [sidebarHeight, setSidebarHeight] = useState('100vh');
+  const [sidebarHeight, setSidebarHeight] = useState("100vh");
   useEffect(() => {
     const updateSidebarHeight = () => {
       setSidebarHeight(`${window.innerHeight}px`);
     };
 
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       // Set the initial height
       updateSidebarHeight();
 
       // Update the height on window resize
-      window.addEventListener('resize', updateSidebarHeight);
+      window.addEventListener("resize", updateSidebarHeight);
 
       // Clean up the event listener on unmount
       return () => {
-        window.removeEventListener('resize', updateSidebarHeight);
+        window.removeEventListener("resize", updateSidebarHeight);
       };
     }
   }, []);
 
-  const loadedData = [
-    {header:"EDUCATION: QUALIFICATION"},
-    {header:"ACHIEVEMENTS:"},
-    {header:"CONTACT:"},
-    {header:"PROJECTS:"},
-    {header:"TECH STACKS:"},
-    {header:"WORK EXPERIENCE:"},
-  ];
-
-  const selected = "border-white text-vs-white-1 border-l-[3px]"
-  const deselected = "border-l-[3px] border-transparent text-vs-white-2"
+  const selected = "border-white text-vs-white-1 border-l-[3px]";
+  const deselected = "border-l-[3px] border-transparent text-vs-white-2";
 
   return (
     <>
-
-    {/* Sidebar */}
-      <div style={{ height: sidebarHeight }} className={` sidebar bg-vs-gray-3 absolute left-0 w-16 z-10 pt-10 pb-6 flex flex-col justify-between`}>
+      {/* Sidebar */}
+      <div
+        style={{ height: sidebarHeight }}
+        className={` sidebar bg-vs-gray-3 absolute left-0 w-16 z-10 pt-10 pb-6 flex flex-col justify-between`}
+      >
         <div className="">
-          <button onClick={()=>{dispatch(arrSelect(0))}} className={(open==0? selected : deselected) + " flex items-center justify-center w-full py-3 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"}>
+          <button
+            onClick={() => {
+              dispatch(arrSelect(0));
+            }}
+            className={
+              (open == 0 && isOpen ? selected : deselected) +
+              " flex items-center justify-center w-full py-3 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"
+            }
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="svg-icon w-7 flex items-center justify-center"
@@ -66,7 +65,15 @@ const MidSec = (
             </svg>
           </button>
 
-          <button onClick={()=>{dispatch(arrSelect(1))}} className={ (open==1? selected : deselected) + " flex items-center justify-center text-vs-white-2 w-full py-3 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"}>
+          <button
+            onClick={() => {
+              dispatch(arrSelect(1));
+            }}
+            className={
+              (open == 1 && isOpen ? selected : deselected) +
+              " flex items-center justify-center text-vs-white-2 w-full py-3 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"
+            }
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="svg-icon w-9"
@@ -80,7 +87,15 @@ const MidSec = (
             </svg>
           </button>
 
-          <button onClick={()=>{dispatch(arrSelect(2))}} className={ (open==2? selected : deselected) + " flex items-center justify-center text-vs-white-2 w-full py-3 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"}>
+          <button
+            onClick={() => {
+              dispatch(arrSelect(2));
+            }}
+            className={
+              (open == 2 && isOpen ? selected : deselected) +
+              " flex items-center justify-center text-vs-white-2 w-full py-3 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"
+            }
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="svg-icon w-7"
@@ -93,7 +108,15 @@ const MidSec = (
             </svg>
           </button>
 
-          <button onClick={()=>{dispatch(arrSelect(3))}} className={ (open==3? selected : deselected) + " flex items-center justify-center text-vs-white-2 w-full py-3 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"}>
+          <button
+            onClick={() => {
+              dispatch(arrSelect(3));
+            }}
+            className={
+              (open == 3 && isOpen ? selected : deselected) +
+              " flex items-center justify-center text-vs-white-2 w-full py-3 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"
+            }
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="svg-icon w-7"
@@ -105,7 +128,15 @@ const MidSec = (
             </svg>
           </button>
 
-          <button onClick={()=>{dispatch(arrSelect(4))}} className={ (open==4? selected : deselected) + " flex items-center justify-center text-vs-white-2 w-full py-3 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"}>
+          <button
+            onClick={() => {
+              dispatch(arrSelect(4));
+            }}
+            className={
+              (open == 4 && isOpen ? selected : deselected) +
+              " flex items-center justify-center text-vs-white-2 w-full py-3 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"
+            }
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="svg-icon w-7"
@@ -117,7 +148,15 @@ const MidSec = (
             </svg>
           </button>
 
-          <button onClick={()=>{dispatch(arrSelect(5))}} className={ (open==5? selected : deselected) + " flex items-center justify-center text-vs-white-2 w-full py-3 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"}>
+          <button
+            onClick={() => {
+              dispatch(arrSelect(5));
+            }}
+            className={
+              (open == 5 && isOpen ? selected : deselected) +
+              " flex items-center justify-center text-vs-white-2 w-full py-3 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"
+            }
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="svg-icon w-7"
@@ -131,60 +170,85 @@ const MidSec = (
         </div>
 
         <div>
-        <div className={" flex items-center justify-center text-vs-white-2 w-full py-3 hover:text-vs-white-1 hover:cursor-pointer"}>
-          <svg
-          className="w-7"
-          viewBox="0 0 107 107"
-          stroke="currentColor"
-          fill="transparent"
-          xmlns="http://www.w3.org/2000/svg">
-            <circle cx="53.5" cy="53.5" r="49" stroke="currentColor" stroke-width="9"/>
-            <circle cx="53.5" cy="43.5" r="21" stroke="currentColor" stroke-width="9"/>
-            <path d="M87 90C83 81.5 74.2107 65 53.5 65C32.7893 65 24 81.5 21 90" stroke="currentColor" stroke-width="9"/>
-          </svg>
-        </div>
-        <div className={" flex items-center justify-center text-vs-white-2 w-full py-3 mb-4 hover:text-vs-white-1 hover:cursor-pointer"}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="svg-icon w-7 transition-transform duration-500 ease-out hover:rotate-90"
-            fill="currentColor"
-            overflow="hidden"
-            viewBox="0 0 1024 1024"
+          <div
+            className={
+              " flex items-center justify-center text-vs-white-2 w-full py-3 hover:text-vs-white-1 hover:cursor-pointer"
+            }
           >
-            <path d="M972.466 405.738l-98.05-19.639c-4.935-14.171-10.751-27.932-17.182-41.243l55.538-83.327c16.935-25.373 13.577-59.203-8.007-80.726l-61.558-61.558c-12.39-12.389-28.731-18.758-45.298-18.758-12.246 0-24.636 3.523-35.428 10.751l-83.326 55.517c-13.373-6.47-27.134-12.225-41.305-17.16L618.21 51.523C612.251 21.584 585.958.06 555.465.06h-87.033c-30.492 0-56.766 21.544-62.745 51.463l-19.64 98.07c-14.17 4.936-27.932 10.71-41.243 17.161l-83.285-55.517a63.86 63.86 0 00-35.49-10.75c-16.546 0-32.887 6.368-45.277 18.757l-61.537 61.558c-21.564 21.564-24.922 55.353-8.007 80.726l55.517 83.327c-6.472 13.352-12.226 27.092-17.14 41.284l-98.113 19.618C21.553 411.738.01 438.012.01 468.504v87.033c0 30.492 21.543 56.786 51.462 62.746l98.071 19.68c4.936 14.17 10.71 27.932 17.14 41.243l-55.475 83.326c-16.936 25.373-13.557 59.203 8.007 80.726l61.558 61.558c12.39 12.39 28.73 18.758 45.277 18.758a63.697 63.697 0 0035.448-10.751l83.327-55.537c13.352 6.491 27.093 12.246 41.284 17.181l19.619 98.05c5.98 29.94 32.253 51.483 62.745 51.483h87.033c30.493 0 56.787-21.564 62.746-51.483l19.68-98.05c14.17-4.935 27.932-10.751 41.243-17.181l83.327 55.537a63.877 63.877 0 0035.427 10.751c16.567 0 32.93-6.369 45.319-18.758l61.558-61.558c21.563-21.564 24.922-55.353 8.007-80.726l-55.538-83.326c6.492-13.373 12.246-27.134 17.182-41.305l98.05-19.618c29.919-5.919 51.483-32.254 51.483-62.746v-87.033c0-30.492-21.564-56.766-51.483-62.746zM861.842 575.155a63.845 63.845 0 00-47.858 41.756 327.768 327.768 0 01-14.294 34.362c-9.952 20.438-8.253 44.582 4.321 63.422l55.558 83.326-61.558 61.558-83.326-55.537a63.992 63.992 0 00-35.49-10.751 64.054 64.054 0 00-27.87 6.369c-11.14 5.365-22.568 10.239-34.425 14.375-21.379 7.414-37.25 25.64-41.694 47.858l-19.68 98.112h-87.032l-19.619-98.112c-4.443-22.24-20.314-40.444-41.734-47.858a330.292 330.292 0 01-34.404-14.294c-8.826-4.32-18.37-6.43-27.912-6.43-12.45 0-24.8 3.625-35.49 10.751L226.01 859.62l-61.558-61.558 55.517-83.326c12.574-18.881 14.212-43.005 4.383-63.36-5.386-11.14-10.199-22.567-14.335-34.424-7.434-21.38-25.66-37.25-47.879-41.694l-98.07-19.68-.062-87.074 98.112-19.618c22.198-4.444 40.445-20.315 47.878-41.735 4.137-11.816 8.888-23.284 14.294-34.404 9.912-20.417 8.253-44.54-4.362-63.38l-55.476-83.327 61.538-61.558L309.315 220a63.992 63.992 0 0035.49 10.751 64.12 64.12 0 0027.87-6.369c11.1-5.365 22.568-10.198 34.404-14.334 21.4-7.434 37.27-25.66 41.735-47.858l19.639-98.071 87.033-.041 19.618 98.112c4.444 22.198 20.315 40.444 41.755 47.878 11.816 4.137 23.264 8.888 34.363 14.294 8.867 4.28 18.37 6.41 27.933 6.41 12.45 0 24.799-3.625 35.489-10.751l83.326-55.517 61.558 61.558-55.558 83.326c-12.573 18.881-14.17 42.964-4.382 63.36 5.365 11.1 10.24 22.567 14.376 34.404 7.413 21.4 25.639 37.27 47.858 41.735l98.05 19.638.102 87.033-98.111 19.64zM511.99 288.008c-123.67 0-223.993 100.303-223.993 223.972 0 123.71 100.303 223.992 223.993 223.992S735.982 635.669 735.982 511.98c0-123.67-100.303-223.972-223.992-223.972zm0 419.99c-108.208 0-195.978-87.79-195.978-195.978 0-108.207 87.77-195.977 195.978-195.977 108.187 0 195.978 87.77 195.978 195.977 0 108.188-87.812 195.978-195.978 195.978zm0-323.988C441.278 384.01 384 441.288 384 512c0 70.691 57.278 127.99 127.99 127.99 70.691 0 127.99-57.299 127.99-127.99S582.68 384.01 511.99 384.01zm0 224.013c-52.998 0-96.003-43.005-96.003-96.003s43.005-96.002 96.003-96.002 96.002 43.004 96.002 96.002c0 52.978-43.004 96.003-96.002 96.003z"></path>
-          </svg>
-        </div>
+            <svg
+              className="w-7"
+              viewBox="0 0 107 107"
+              stroke="currentColor"
+              fill="transparent"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="53.5"
+                cy="53.5"
+                r="49"
+                stroke="currentColor"
+                stroke-width="9"
+              />
+              <circle
+                cx="53.5"
+                cy="43.5"
+                r="21"
+                stroke="currentColor"
+                stroke-width="9"
+              />
+              <path
+                d="M87 90C83 81.5 74.2107 65 53.5 65C32.7893 65 24 81.5 21 90"
+                stroke="currentColor"
+                stroke-width="9"
+              />
+            </svg>
+          </div>
+
+          <div
+            className={
+              " flex items-center justify-center text-vs-white-2 w-full py-3 mb-4 hover:text-vs-white-1 hover:cursor-pointer"
+            }
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="svg-icon w-7 transition-transform duration-500 ease-out hover:rotate-90"
+              fill="currentColor"
+              overflow="hidden"
+              viewBox="0 0 1024 1024"
+            >
+              <path d="M972.466 405.738l-98.05-19.639c-4.935-14.171-10.751-27.932-17.182-41.243l55.538-83.327c16.935-25.373 13.577-59.203-8.007-80.726l-61.558-61.558c-12.39-12.389-28.731-18.758-45.298-18.758-12.246 0-24.636 3.523-35.428 10.751l-83.326 55.517c-13.373-6.47-27.134-12.225-41.305-17.16L618.21 51.523C612.251 21.584 585.958.06 555.465.06h-87.033c-30.492 0-56.766 21.544-62.745 51.463l-19.64 98.07c-14.17 4.936-27.932 10.71-41.243 17.161l-83.285-55.517a63.86 63.86 0 00-35.49-10.75c-16.546 0-32.887 6.368-45.277 18.757l-61.537 61.558c-21.564 21.564-24.922 55.353-8.007 80.726l55.517 83.327c-6.472 13.352-12.226 27.092-17.14 41.284l-98.113 19.618C21.553 411.738.01 438.012.01 468.504v87.033c0 30.492 21.543 56.786 51.462 62.746l98.071 19.68c4.936 14.17 10.71 27.932 17.14 41.243l-55.475 83.326c-16.936 25.373-13.557 59.203 8.007 80.726l61.558 61.558c12.39 12.39 28.73 18.758 45.277 18.758a63.697 63.697 0 0035.448-10.751l83.327-55.537c13.352 6.491 27.093 12.246 41.284 17.181l19.619 98.05c5.98 29.94 32.253 51.483 62.745 51.483h87.033c30.493 0 56.787-21.564 62.746-51.483l19.68-98.05c14.17-4.935 27.932-10.751 41.243-17.181l83.327 55.537a63.877 63.877 0 0035.427 10.751c16.567 0 32.93-6.369 45.319-18.758l61.558-61.558c21.563-21.564 24.922-55.353 8.007-80.726l-55.538-83.326c6.492-13.373 12.246-27.134 17.182-41.305l98.05-19.618c29.919-5.919 51.483-32.254 51.483-62.746v-87.033c0-30.492-21.564-56.766-51.483-62.746zM861.842 575.155a63.845 63.845 0 00-47.858 41.756 327.768 327.768 0 01-14.294 34.362c-9.952 20.438-8.253 44.582 4.321 63.422l55.558 83.326-61.558 61.558-83.326-55.537a63.992 63.992 0 00-35.49-10.751 64.054 64.054 0 00-27.87 6.369c-11.14 5.365-22.568 10.239-34.425 14.375-21.379 7.414-37.25 25.64-41.694 47.858l-19.68 98.112h-87.032l-19.619-98.112c-4.443-22.24-20.314-40.444-41.734-47.858a330.292 330.292 0 01-34.404-14.294c-8.826-4.32-18.37-6.43-27.912-6.43-12.45 0-24.8 3.625-35.49 10.751L226.01 859.62l-61.558-61.558 55.517-83.326c12.574-18.881 14.212-43.005 4.383-63.36-5.386-11.14-10.199-22.567-14.335-34.424-7.434-21.38-25.66-37.25-47.879-41.694l-98.07-19.68-.062-87.074 98.112-19.618c22.198-4.444 40.445-20.315 47.878-41.735 4.137-11.816 8.888-23.284 14.294-34.404 9.912-20.417 8.253-44.54-4.362-63.38l-55.476-83.327 61.538-61.558L309.315 220a63.992 63.992 0 0035.49 10.751 64.12 64.12 0 0027.87-6.369c11.1-5.365 22.568-10.198 34.404-14.334 21.4-7.434 37.27-25.66 41.735-47.858l19.639-98.071 87.033-.041 19.618 98.112c4.444 22.198 20.315 40.444 41.755 47.878 11.816 4.137 23.264 8.888 34.363 14.294 8.867 4.28 18.37 6.41 27.933 6.41 12.45 0 24.799-3.625 35.489-10.751l83.326-55.517 61.558 61.558-55.558 83.326c-12.573 18.881-14.17 42.964-4.382 63.36 5.365 11.1 10.24 22.567 14.376 34.404 7.413 21.4 25.639 37.27 47.858 41.735l98.05 19.638.102 87.033-98.111 19.64zM511.99 288.008c-123.67 0-223.993 100.303-223.993 223.972 0 123.71 100.303 223.992 223.993 223.992S735.982 635.669 735.982 511.98c0-123.67-100.303-223.972-223.992-223.972zm0 419.99c-108.208 0-195.978-87.79-195.978-195.978 0-108.207 87.77-195.977 195.978-195.977 108.187 0 195.978 87.77 195.978 195.977 0 108.188-87.812 195.978-195.978 195.978zm0-323.988C441.278 384.01 384 441.288 384 512c0 70.691 57.278 127.99 127.99 127.99 70.691 0 127.99-57.299 127.99-127.99S582.68 384.01 511.99 384.01zm0 224.013c-52.998 0-96.003-43.005-96.003-96.003s43.005-96.002 96.003-96.002 96.002 43.004 96.002 96.002c0 52.978-43.004 96.003-96.002 96.003z"></path>
+            </svg>
+          </div>
         </div>
       </div>
 
+      {/* Side Menu */}
+      <div className="flex flex-row transition-all duration-300 ease-in-out ml-16">
+        {/* <AnimatePresence> */}
+        {
+          <div
+            className={
+              (isOpen
+                ? "max-sm:w-full sm:w-1/3 lg:w-1/4 2xl:w-2/12"
+                : "overflow-clip w-0") +
+              " transition-all duration-300 ease-in-out "
+            }
+          >
+            <SideMenu />
+          </div>
+        }
+        {/* </AnimatePresence> */}
 
-    {/* Side Menu */}
-    <div
-      
-    className="flex flex-row transition-all duration-300 ease-in-out ml-16">
-      {/* <AnimatePresence> */}
-        { (
-          <div
-          className={(open!==-1? "max-sm:w-full sm:w-1/3 lg:w-1/4 2xl:w-2/12": "overflow-clip w-0") + " transition-all duration-300 ease-in-out "}
-            
-          >
-            <SideMenu data={open===-1?"":loadedData[open]}/>
-          </div>
-        )}
-      {/* </AnimatePresence> */}
-        
-          <div
-            className={`${open>-1? "max-sm:hidden max-sm:w-0 sm:w-2/3 lg:w-3/4 2xl:w-10/12" : " w-full "} transition-all duration-300 ease-in-out`}
-            
-            
-          >
-            <MainBody
-            // toggleTerminal={toggleTerminal} isTerminalOpen={isTerminalOpen} setIsTerminalOpen={setIsTerminalOpen}
-            data={open===-1?"":loadedData[open]}
-            />
-          </div>
-        
+        <div
+          className={`${
+            isOpen
+              ? "max-sm:hidden max-sm:w-0 sm:w-2/3 lg:w-3/4 2xl:w-10/12"
+              : " w-full "
+          } transition-all duration-300 ease-in-out`}
+        >
+          <MainBody />
         </div>
+      </div>
     </>
   );
 };

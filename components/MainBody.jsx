@@ -7,7 +7,7 @@ import CodingArea from "./CodingArea";
 import { useSelector,useDispatch } from "react-redux"
 import {toggleTerminal} from "@app/GlobalRedux/Features/terminal/terminalToggle"
 
-import Terminal from "./Terminal"
+import Terminal from "./Terminal/Terminal"
 
 const MainBody = () => {
 

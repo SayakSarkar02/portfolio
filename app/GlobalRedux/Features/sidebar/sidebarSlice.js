@@ -3,7 +3,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  isOpen: -1
+  whatOpen: -1,
+  isOpen: false
 };
 
 export const sidebarSlice = createSlice({
@@ -11,7 +12,21 @@ export const sidebarSlice = createSlice({
   initialState,
   reducers: {
     arrSelect: (state, action) => {
-      state.isOpen === action.payload? (state.isOpen = -1) : (state.isOpen = action.payload);
+      // state.whatOpen === action.payload? (state.whatOpen = -1) : (state.whatOpen = action.payload);
+      if(state.isOpen === false){
+        state.whatOpen = action.payload;
+        state.isOpen = true;
+      }
+      else if(state.whatOpen === action.payload && state.isOpen === true){
+        state.isOpen = false;
+      }
+      else if(state.whatOpen !== action.payload && state.isOpen === true){
+        state.whatOpen = action.payload;
+      }
+      else{
+        state.whatOpen = action.payload;
+        state.isOpen = true;
+      }
     },
   },
 });

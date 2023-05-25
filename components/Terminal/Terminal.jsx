@@ -3,16 +3,22 @@
 import useSound from 'use-sound';
 import { useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import jotunamila from '../public/assets/jotunamila.mp3';
-import kharahu from '../public/assets/kharahu.mp3';
+// import jotunamila from '@assets/jotunamila.mp3';
+import kharahu from '@public/assets/kharahu.mp3';
 
 import { useDispatch } from "react-redux";
 import {toggleTerminal} from "@app/GlobalRedux/Features/terminal/terminalToggle";
+import {arrSelect} from "@app/GlobalRedux/Features/sidebar/sidebarSlice"
+import Meet from '@components/EasterEggs/Meet';
+import Problems from './Problems';
+import Output from './Output';
+import Debug from './Debug';
 
 const Terminal = () => {
 
   //Redux State Handling
   const dispatch = useDispatch();
+  
 
   //Music Play Settings
   const soundOptions = {
@@ -43,6 +49,9 @@ const Terminal = () => {
     }
   };
 
+  //Terminal Menu
+  const [terminalMenu, setTerminalMenu] = useState(4);
+
   //Commands for terminal
   const handleTerminalRun = (e) => {
     e.preventDefault();
@@ -52,12 +61,12 @@ const Terminal = () => {
       const temp = [...output, {in:inputRef.current.value, out:"Taking to Sayak's Favourite Place..."}];
       setOutput(temp);
       setTimeout(() => {
+        dispatch(arrSelect(-1));
         setMeet(true);
         setTimeout(() => {
           play();
         }, 1000);
       }, 2000);
-      console.log("Playing Music");
     }
     else if(command.trim()==="npm meet"){
       const temp = [...output, {in:inputRef.current.value, out:"Setting up a Meet with Sayak..."}];
@@ -85,13 +94,14 @@ const Terminal = () => {
   }
 
   return (
-    <div className="border-2 border-vs-gray-2 h-56 flex flex-col itsm max-sm:pl-4 max-sm:h-72 pl-8 py-3 relative bottom-6">
+    <div className="border-2 border-vs-gray-2 h-56 flex flex-col itsm max-sm:pl-4 max-sm:h-72 pl-8 py-3 relative bottom-6 max-sm:text-sm">
+      {/* Terminal Header Menu */}
       <div className='flex flex-row justify-between items-center'>
-      <ul className="flex flex-row gap-6 max-sm:gap-2 select-none">
-        <li className="text-vs-white-2 cursor-pointer">PROBLEMS</li>
-        <li className="text-vs-white-2 cursor-pointer">OUTPUT</li>
-        <li className="text-vs-white-2 cursor-pointer max-sm:hidden">DEBUG CONSOLE</li>
-        <li className="text-vs-white-2 cursor-pointer border-transparent border-b-vs-blue-3 border-[1px]">TERMINAL</li>
+      <ul className="flex flex-row gap-6 max-sm:gap-2 select-none items-center">
+        <li onClick={()=>{setTerminalMenu(1)}} className={"text-vs-white-2 cursor-pointer border-transparent border-[1px]" + (terminalMenu===1 && " border-b-vs-blue-3 ")}>PROBLEMS</li>
+        <li onClick={()=>{setTerminalMenu(2)}} className={"text-vs-white-2 cursor-pointer border-transparent border-[1px]" + (terminalMenu===2 && " border-b-vs-blue-3 ")}>OUTPUT</li>
+        <li onClick={()=>{setTerminalMenu(3)}} className={"text-vs-white-2 cursor-pointer border-transparent border-[1px] max-sm:hidden " + (terminalMenu===3 && " border-b-vs-blue-3 ")}>DEBUG CONSOLE</li>
+        <li onClick={()=>{setTerminalMenu(4)}} className={"text-vs-white-2 cursor-pointer border-transparent border-[1px]" + (terminalMenu===4 && " border-b-vs-blue-3 ")}>TERMINAL</li>
       </ul>
       <div className='px-4 cursor-pointer' onClick={()=>{dispatch(toggleTerminal())}}
       >
@@ -108,25 +118,32 @@ const Terminal = () => {
       </div>
       </div>
 
-      <form onSubmit={handleTerminalRun} className="py-2 h-64 w-full overflow-y-scroll"onClick={terminalClick}>
+      {/* Problems Body */}
+      {terminalMenu===1 && <Problems/>}
+
+      {/* Output Body */}
+      {terminalMenu===2 && <Output/>}
+
+      {/* Debug Body */}
+      {terminalMenu===3 && <Debug/>}
+
+      {/* Terminal Body */}
+      { terminalMenu===4 && <form onSubmit={handleTerminalRun} className="py-2 h-64 w-full overflow-y-scroll" onClick={terminalClick}>
         {output!==[]?
         output.map((comdata, index)=>(
           <div key={index}>
-          <h3>{"Sayaks_Device"}<span className="text-vs-blue-3">{"/Desktop~ "}</span> $ <span className="bg-transparent w-[80%] text-vs-white-1 focus:border-none focus:outline-none" type="text">{comdata?.in}</span></h3>
+          <h3 className="text-vs-blue-3">{"Sayaks_Device"}<span className="text-vs-blue-3">{"/Desktop~ "}</span> $ <span className="bg-transparent w-[80%] text-vs-white-1 focus:border-none focus:outline-none" type="text">{comdata?.in.split(' ').map((word)=>(['npm', 'run'].includes(word)?(<span className='text-yellow-300'>{word}&nbsp;</span>):(<span className='text-vs-white-1'>{word}&nbsp;</span>)))}</span></h3>
           {comdata?.out}
         </div>
         ))
         :null}
-        <h3 className='flex flex-row gap-2 flex-wrap'>{"Sayaks_Device"}<span className="text-vs-blue-3">{"/Desktop~ "}</span> $ <input ref={inputRef} placeholder='Try: npm github / npm meet' className=" placeholder:text-vs-gray-2 bg-transparent sm:w-[60%] md:w-[70%] w-[100%] text-vs-white-1 focus:border-none focus:outline-none" type="text" /></h3>
+        <h3 className='flex flex-row gap-2 flex-wrap text-vs-blue-3'>{"Sayaks_Device"}<span className="text-vs-blue-3">{"/Desktop~ "}</span> $ <input ref={inputRef} placeholder='Try: npm github / npm meet' className=" placeholder:text-vs-gray-2 bg-transparent sm:w-[60%] md:w-[70%] w-[100%] text-vs-white-1 focus:border-none focus:outline-none" type="text" /></h3>
 
-      </form>
+      </form>}
+
 
       {/* Meet Easter Egg */}
-      {meet &&
-      <div style={{ width: window.innerWidth, height:window.innerHeight }} className='absolute bottom-0 left-0 bg-[#1f2122] flex items-center justify-center'>
-        <div onClick={()=>{setMeet(false);stop();}} className='absolute top-20 right-20 w-8 h-8 bg-red-700 rounded-full text-white text-xl leading-none cursor-pointer hover:bg-red-500 text-center pb-1 flex items-center justify-center font-sans'>x</div>
-        <img src="/assets/meet.png" className='h-[90%] self-end  object-cover' alt="meet"/>
-      </div>}
+      {meet && <Meet setMeet={setMeet} stop={stop}/>}
 
     </div>
   )
