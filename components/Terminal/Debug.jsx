@@ -1,6 +1,8 @@
 "use client"
 
 import { useState, useEffect } from "react";
+import useSound from 'use-sound';
+import bugKill from '@public/assets/smashBug.mp3';
 
 const Debug = () => {
 
@@ -9,6 +11,16 @@ const Debug = () => {
   const [timeLeft, setTimeLeft] = useState(30);
   const [kill, setKill] = useState(false);
 
+
+  const soundOptions = {
+    volume: 0.8, // Set the volume level (0 to 1)
+    playbackRate: (score*0.25 + 0.75)>1.5? 1.5 :(score*0.25 + 0.75), // Set the playback rate (default: 1)
+    interrupt: false, // Allow playing multiple instances simultaneously (default: false)
+  };
+
+  //Music Play Hook
+  const [play, { stop }] = useSound(bugKill, soundOptions);
+  
   const startGame = () => {
     setScore(0);
     setGameStarted(true);
@@ -28,6 +40,7 @@ const Debug = () => {
   const handleClick = () => {
     setScore(score + 1);
     setIsClicked(true);
+    play();
   };
 
 
@@ -80,7 +93,7 @@ const Debug = () => {
   };
 
   return (
-    <div className={"flex flex-row items-center " + (gameStarted && " cursor-crosshair ")}>
+    <div className={"flex flex-row items-center select-none " + (gameStarted && " cursor-crosshair ")}>
       <div className="bg-white/10 p-3 px-5 mt-5 rounded-lg flex flex-col">
         <h3 className="font-bold text-yellow-500">Tap to kill bugs</h3>
         <h3>Score: {score}</h3>
