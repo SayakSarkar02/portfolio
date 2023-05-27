@@ -23,7 +23,20 @@ const initialState = {
 
   ],
   contact: [
-
+    {folderName: "Professional",
+     files: [
+         {fileName: "Linkedin", content: {title: "Linkedin", link:"https://www.linkedin.com/in/sayaksarkar02/", description: "Test Linkedin Description"}},
+         {fileName: "Twitter", content: {title: "Twitter", link:"https://twitter.com/SayakSarkar02", description: "Test Twitter Description"}},
+         {fileName: "Github", content: {title: "Github", link:"https://github.com/SayakSarkar02", description: "Test Github Description"}},
+         {fileName: "Email", content: {title: "Email", link:"mailto: sayaksarkar73@gmail.com", description: "Test Mail Description"}},
+     ]
+    },
+    {folderName: "Non-Professional",
+     files: [
+      {fileName: "Instagram Art", content: {title: "Instagram: art_freak_sayak", link:"https://www.instagram.com/art_freak_sayak/", description: "Test Instagram 1 Description"}},
+      {fileName: "Instagram Personal", content: {title: "Instagram: sayak_pvt", link:"https://www.instagram.com/sayak__pvt/", description: "Test Instagram 2 Description"}},
+     ]
+    },
   ],
   projects: [
 
@@ -36,7 +49,10 @@ const initialState = {
   ],
   body: [
 
-  ]
+  ],
+  about: [
+
+  ],
 };
 
 export const sidebarMenu = createSlice({
@@ -44,7 +60,9 @@ export const sidebarMenu = createSlice({
   initialState,
   reducers: {
     setBody: (state, action) => {
-      state.body = action.payload;
+      state.body = {
+        type: action.payload.type,
+        data:action.payload.data};
     },
   },
 });

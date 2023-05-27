@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import {setBody} from "@app/GlobalRedux/Features/sidebar/sidebarMenu"
+import { motion } from 'framer-motion';
 
 const MenuCard = ({keyMap, name, type, files}) => {
   const [open, setOpen] = useState(false);
@@ -22,9 +23,13 @@ const MenuCard = ({keyMap, name, type, files}) => {
         <h3 className="text-sm text-vs-white-1">{name}</h3>
       </div>
       {open && files?.map((file, index) => (
-        <div onClick={()=>{dispatch(setBody(file?.content));console.log(file?.content);}}>
+        <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.25, delay: index * 0.1 }}
+        onClick={()=>{dispatch(setBody({data:file?.content, type:"education"}));console.log(file?.content);}}>
         <MenuCard keyMap={index} name={file.fileName} type={"file"}/>
-        </div>
+        </motion.div>
       ))}
     </div>
   )
@@ -46,9 +51,12 @@ const Education = () => {
       <div className="flex flex-col">
         {
           folderList.map((item, index) => (
-            <>
+            <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.25, delay: index * 0.1 }}>
             <MenuCard keyMap={index} name={item.folderName} files={item.files} type={"folder"}/>
-            </>
+            </motion.div>
           ))
         }
       </div>

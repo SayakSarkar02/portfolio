@@ -1,15 +1,16 @@
 "use client"
 
 import { useSelector, useDispatch } from "react-redux"
-import {setBody} from "@app/GlobalRedux/Features/sidebar/sidebarMenu"
 
 const Education = () => {
 
-  const data = useSelector((state) => state.menu.body);
+  const data = useSelector((state) => state.menu.body.data);
+  const type = useSelector((state) => state.menu.body.type);
   console.log("Hi data",data);
 
   return (
-    <div>
+  <>
+    {type==="education" && <div>
       Education
       <br />
       {data.title}
@@ -20,6 +21,7 @@ const Education = () => {
       <br />
       {data.percentage}
     </div>
+    }</>
   )
 }
 
