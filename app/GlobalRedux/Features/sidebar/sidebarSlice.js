@@ -28,9 +28,17 @@ export const sidebarSlice = createSlice({
         state.isOpen = true;
       }
     },
+    toggleSideBarMenu: (state, action) => {
+      if(state.isOpen === false){
+        state.isOpen = true;
+      }
+      else{
+        state.isOpen = false;
+      }
+    }
   },
 });
 
-export const { arrSelect } = sidebarSlice.actions;
+export const { arrSelect, toggleSideBarMenu } = sidebarSlice.actions;
 
 export default sidebarSlice.reducer;

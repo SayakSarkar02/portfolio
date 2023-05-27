@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import {setBody} from "@app/GlobalRedux/Features/sidebar/sidebarMenu"
+import { toggleSideBarMenu } from "@app/GlobalRedux/Features/sidebar/sidebarSlice"
 
 const MenuCard = ({keyMap, name, type, files}) => {
   const [open, setOpen] = useState(false);
@@ -22,7 +23,7 @@ const MenuCard = ({keyMap, name, type, files}) => {
         <h3 className="text-sm text-vs-white-1">{name}</h3>
       </div>
       {open && files?.map((file, index) => (
-        <div onClick={()=>{dispatch(setBody(file?.content));console.log(file?.content);}}>
+        <div onClick={()=>{dispatch(setBody(file?.content));dispatch(toggleSideBarMenu());}}>
         <MenuCard keyMap={index} name={file.fileName} type={"file"}/>
         </div>
       ))}
