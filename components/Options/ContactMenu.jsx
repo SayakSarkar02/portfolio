@@ -4,6 +4,8 @@ import { useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import {setBody} from "@app/GlobalRedux/Features/sidebar/sidebarMenu"
 import { motion } from 'framer-motion';
+import { toggleSideBarMenu } from "@app/GlobalRedux/Features/sidebar/sidebarSlice"
+
 
 const MenuCard = ({keyMap, name, type, files}) => {
   const [open, setOpen] = useState(false);
@@ -27,7 +29,7 @@ const MenuCard = ({keyMap, name, type, files}) => {
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
-        onClick={()=>{dispatch(setBody({data:file?.content, type:"contact"}));console.log(file?.content);}}>
+        onClick={()=>{dispatch(setBody({data:file?.content, type:"contact"}));dispatch(toggleSideBarMenu());}}>
         <MenuCard keyMap={index} name={file.fileName} type={"file"}/>
         </motion.div>
       ))}
