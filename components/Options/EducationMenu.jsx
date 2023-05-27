@@ -28,7 +28,8 @@ const MenuCard = ({keyMap, name, type, files}) => {
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.25, delay: index * 0.1 }}
-        onClick={()=>{dispatch(setBody({data:file?.content, type:"education"}));dispatch(toggleSideBarMenu())}}>
+        onClick={()=>{dispatch(setBody({data:file?.content, type:"education"}));
+        window.innerWidth<=640 && dispatch(toggleSideBarMenu())}}>
         <MenuCard keyMap={index} name={file.fileName} type={"file"}/>
         </motion.div>
       ))}
