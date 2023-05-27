@@ -4,6 +4,7 @@ import { useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import {setBody} from "@app/GlobalRedux/Features/sidebar/sidebarMenu"
 import { motion } from 'framer-motion';
+import { toggleSideBarMenu } from "@app/GlobalRedux/Features/sidebar/sidebarSlice"
 
 const MenuCard = ({keyMap, name, type, files}) => {
   const [open, setOpen] = useState(false);

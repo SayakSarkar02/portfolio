@@ -94,16 +94,17 @@ const Terminal = () => {
   }
 
   return (
-    <div className="border-2 border-vs-gray-2 h-56 flex flex-col itsm max-sm:pl-4 max-sm:h-72 pl-8 py-3 relative bottom-6 max-sm:text-sm">
+    <div className="border-2 border-vs-gray-2 h-56 flex flex-col itsm max-sm:px-4 max-sm:h-72 px-8 py-3 relative bottom-6 max-sm:text-sm">
       {/* Terminal Header Menu */}
       <div className='flex flex-row justify-between items-center'>
       <ul className="flex flex-row gap-6 max-sm:gap-2 select-none items-center">
         <li onClick={()=>{setTerminalMenu(1)}} className={"text-vs-white-2 cursor-pointer border-transparent border-[1px]" + (terminalMenu===1 && " border-b-vs-blue-3 ")}>PROBLEMS</li>
-        <li onClick={()=>{setTerminalMenu(2)}} className={"text-vs-white-2 cursor-pointer border-transparent border-[1px]" + (terminalMenu===2 && " border-b-vs-blue-3 ")}>OUTPUT</li>
-        <li onClick={()=>{setTerminalMenu(3)}} className={"text-vs-white-2 cursor-pointer border-transparent border-[1px] max-sm:hidden " + (terminalMenu===3 && " border-b-vs-blue-3 ")}>DEBUG CONSOLE</li>
+        <li onClick={()=>{setTerminalMenu(2)}} className={"text-vs-white-2 cursor-pointer border-transparent border-[1px] max-sm:hidden " + (terminalMenu===2 && " border-b-vs-blue-3 ")}>OUTPUT</li>
+        <li onClick={()=>{setTerminalMenu(3)}} className={"text-vs-white-2 cursor-pointer border-transparent border-[1px] max-sm:hidden " + (terminalMenu===3 && " border-b-vs-blue-3 ")}>DEBUG-CONSOLE</li>
+        <li onClick={()=>{setTerminalMenu(3)}} className={"text-vs-white-2 cursor-pointer border-transparent border-[1px] sm:hidden " + (terminalMenu===3 && " border-b-vs-blue-3 ")}>DEBUG</li>
         <li onClick={()=>{setTerminalMenu(4)}} className={"text-vs-white-2 cursor-pointer border-transparent border-[1px]" + (terminalMenu===4 && " border-b-vs-blue-3 ")}>TERMINAL</li>
       </ul>
-      <div className='px-4 cursor-pointer' onClick={()=>{dispatch(toggleTerminal())}}
+      <div className='sm:px-4 cursor-pointer' onClick={()=>{dispatch(toggleTerminal())}}
       >
       <svg
           xmlns="http://www.w3.org/2000/svg"

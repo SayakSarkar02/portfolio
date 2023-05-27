@@ -14,7 +14,8 @@ const Footer = () => {
         <path d="M1 9.50003L3.08938 7.41064L5.27374 9.50003M22.2737 9.50003L20.1844 11.5894L18 9.50003" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
-      <h3 className="cursor-default">Find some Easter-Eggs if you can</h3>
+      <h3 className="cursor-default max-sm:hidden">Find some Easter-Eggs if you can</h3>
+      <a className="cursor-default sm:hidden" href="mailto:sayaksarkar73@gmail.com">Mail Me Now</a>
 
     </div>
   )
