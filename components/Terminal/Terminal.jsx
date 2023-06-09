@@ -8,8 +8,8 @@ import kharahu from '@public/assets/kharahu.mp3';
 
 import { useDispatch } from "react-redux";
 import {toggleTerminal} from "@app/GlobalRedux/Features/terminal/terminalToggle";
-import {arrSelect} from "@app/GlobalRedux/Features/sidebar/sidebarSlice"
-import Meet from '@components/EasterEggs/Meet';
+import {closeSideBarMenu} from "@app/GlobalRedux/Features/sidebar/sidebarSlice"
+import Meet from '@components/EasterEggs/test/Meet';
 import Problems from './Problems';
 import Output from './Output';
 import Debug from './Debug';
@@ -61,7 +61,7 @@ const Terminal = () => {
       const temp = [...output, {in:inputRef.current.value, out:"Taking to Sayak's Favourite Place..."}];
       setOutput(temp);
       setTimeout(() => {
-        dispatch(arrSelect(-1));
+        dispatch(closeSideBarMenu());
         setMeet(true);
         setTimeout(() => {
           play();
@@ -94,6 +94,7 @@ const Terminal = () => {
   }
 
   return (
+  <div>
     <div className="border-2 border-vs-gray-2 h-56 flex flex-col itsm max-sm:px-4 max-sm:h-72 px-8 py-3 relative bottom-6 max-sm:text-sm">
       {/* Terminal Header Menu */}
       <div className='flex flex-row justify-between items-center'>
@@ -143,9 +144,11 @@ const Terminal = () => {
       </form>}
 
 
-      {/* Meet Easter Egg */}
-      {meet && <Meet setMeet={setMeet} stop={stop}/>}
+      
 
+    </div>
+    {/* Meet Easter Egg */}
+    {meet && <Meet setMeet={setMeet} stop={stop}/>}
     </div>
   )
 }

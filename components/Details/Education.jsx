@@ -6,11 +6,11 @@ const Education = () => {
 
   const data = useSelector((state) => state.menu.body.data);
   const type = useSelector((state) => state.menu.body.type);
-  console.log("Hi data",data);
 
   return (
   <>
-    {type==="education" && <div>
+    {
+    type==="education"? <div>
       Education
       <br />
       {data.title}
@@ -20,7 +20,17 @@ const Education = () => {
       {data.description}
       <br />
       {data.percentage}
+    </div>:
+    <div className="lg:text-xl">
+      {/* <span className="text-2xl">Hey There!</span>  */}
+      <span className="text-2xl text-vs-yellow">Hey</span><span className=" text-vs-blue-1 text-2xl">(There)</span><span className=" text-vs-yellow text-2xl">!</span>
+      <br />
+      <br />
+      Wanna know more about my <span className="text-vs-purple">education qualifications</span> ,
+      <br />
+      select what you want to know about me from the side-menu.
     </div>
+    
     }</>
   )
 }

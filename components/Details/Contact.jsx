@@ -8,7 +8,7 @@ const Contact = () => {
   const type = useSelector((state) => state.menu.body.type);
 
   return (<>
-    {type==="contact" &&
+    {type==="contact"?
       <div>
       Wanna have a talk with me on {data.title}?
       <br />
@@ -16,7 +16,17 @@ const Contact = () => {
       <br />
       {data.description}
       <br />
-    </div>}</>
+    </div>:
+    <div className="lg:text-xl">
+    {/* <span className="text-2xl">Hey There!</span>  */}
+    <span className="text-2xl text-vs-yellow">Hey</span><span className=" text-vs-blue-1 text-2xl">(There)</span><span className=" text-vs-yellow text-2xl">!</span>
+    <br />
+    <br />
+    Want to contact <span className="text-vs-purple"> contact me </span> ?
+    <br />
+    Select how you want to reach me from the side-menu.
+  </div>
+    }</>
   )
 }
 

@@ -8,6 +8,7 @@ import Contact from "./Details/Contact";
 import Projects from "./Details/Projects";
 import TechStacks from "./Details/TechStacks";
 import WorkExperience from "./Details/WorkExperience";
+import Default from "./Details/Default";
 
 const CodingArea = () => {
   const open = useSelector((state) => state.sidebar.whatOpen);
@@ -21,6 +22,7 @@ const CodingArea = () => {
       {open===3 && <Projects/>}
       {open===4 && <TechStacks/>}
       {open===5 && <WorkExperience/>}
+      {open===-1 && <Default/>}
     </div>
   )
 }
