@@ -124,7 +124,7 @@ const Terminal = () => {
 
   return (
   <div>
-    <div className="border-2 border-vs-gray-2 h-56 flex flex-col itsm max-sm:px-4 max-sm:h-72 px-8 py-3 relative bottom-6 max-sm:text-sm">
+    <div className="border-2 border-vs-gray-2 h-56 bg-vs-gray-6 flex flex-col itsm max-sm:px-4 max-sm:h-64 px-8 py-3 relative bottom-6 max-sm:text-sm">
       {/* Terminal Header Menu */}
       <div className='flex flex-row justify-between items-center'>
       <ul className="flex flex-row gap-6 max-sm:gap-2 select-none items-center">
