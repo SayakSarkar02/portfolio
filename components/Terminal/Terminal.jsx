@@ -76,10 +76,38 @@ const Terminal = () => {
       }, 1000);
     }
     else if(command.trim()==="npm github"){
-      const temp = [...output, {in:inputRef.current.value, out:"Going to Github..."}];
+      const temp = [...output, {in:inputRef.current.value, out:"Going to Sayak's Github..."}];
       setOutput(temp);
       setTimeout(() => {
         router.push('https://github.com/sayaksarkar02');
+      }, 1000);
+    }
+    else if(command.trim()==="npm twitter"){
+      const temp = [...output, {in:inputRef.current.value, out:"Moving to Sayak's Twitter..."}];
+      setOutput(temp);
+      setTimeout(() => {
+        router.push('https://twitter.com/SayakSarkar02');
+      }, 1000);
+    }
+    else if(command.trim()==="npm linkedin"){
+      const temp = [...output, {in:inputRef.current.value, out:"Loading Up Sayak's Linkedin..."}];
+      setOutput(temp);
+      setTimeout(() => {
+        router.push('https://www.linkedin.com/in/sayaksarkar02/');
+      }, 1000);
+    }
+    else if(command.trim()==="npm instagram"){
+      const temp = [...output, {in:inputRef.current.value, out:"Visiting Sayak's Instagram Page..."}];
+      setOutput(temp);
+      setTimeout(() => {
+        router.push('https://www.instagram.com/art_freak_sayak/');
+      }, 1000);
+    }
+    else if(command.trim()==="npm mail"){
+      const temp = [...output, {in:inputRef.current.value, out:"Setting you up to mail Sayak..."}];
+      setOutput(temp);
+      setTimeout(() => {
+        router.push('mailto:sayaksarkar73@gmail.com');
       }, 1000);
     }
     else if(command.trim()==="clear"){

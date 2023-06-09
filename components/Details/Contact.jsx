@@ -30,6 +30,11 @@ const Contact = () => {
     Want to contact <span className="text-vs-purple"> contact me </span> ?
     <br />
     Select how you want to reach me from the side-menu.
+    <br />
+    <br />
+    <span className=""> You can also try <span className="text-vs-blue-1"> commands </span> in terminal like </span>
+    <br />
+    <span className="text-yellow-200"> npm </span> github / <span className="text-yellow-200"> npm </span> linkedin / <span className="text-yellow-200"> npm </span> instagram / <span className="text-yellow-200"> npm </span> twitter
   </div>
     }</>
   )
