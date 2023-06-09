@@ -59,8 +59,8 @@ const Meet = ({setMeet, stop}) => {
                     onClick={()=>{setMeet(false);stop();}}
                     className="order-first md:order-last bg-red-500 w-16 h-12 hover:bg-red-600 cursor-pointer flex items-center justify-center rounded-3xl">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="white" height="28" viewBox="0 -960 960 960" width="28"><path d="M480-640q118 0 232.5 47.5T916-450q12 12 12 28t-12 28l-92 90q-11 11-25.5 12t-26.5-8l-116-88q-8-6-12-14t-4-18v-114q-38-12-78-19t-82-7q-42 0-82 7t-78 19v114q0 10-4 18t-12 14l-116 88q-12 9-26.5 8T136-304l-92-90q-12-12-12-28t12-28q88-95 203-142.5T480-640Z"/></svg>
-                        <div className="absolute text-white text-[12px] bg-vs-gray-2 h-8 px-3 top-10 animate-bounce rounded-lg ml-10 shadow-lg">
-                            <div className="relative top-2">Click to Exit</div> 
+                        <div className="absolute text-white text-[12px] bg-vs-gray-2 h-8 px-3 top-10 animate-bounce max-sm:animate-pulse rounded-lg ml-10 shadow-lg">
+                            <div className="relative top-2 ">Click to Exit</div> 
                             <div className="relative w-4 h-4 bg-vs-gray-2 rotate-45 top-1 rounded-sm"></div>
                         </div>
                     </div>
