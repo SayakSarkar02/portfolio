@@ -1,5 +1,3 @@
-// "use client"
-// import { useEffect, useState } from "react";
 import samp from "../../../public/assets/icons/meet/samp.png"
 import sayak from "../../../public/assets/icons/meet/sayak.png"
 import Image from "next/image"

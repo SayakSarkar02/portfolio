@@ -12,7 +12,6 @@ export const sidebarSlice = createSlice({
   initialState,
   reducers: {
     arrSelect: (state, action) => {
-      // state.whatOpen === action.payload? (state.whatOpen = -1) : (state.whatOpen = action.payload);
       if(state.isOpen === false){
         state.whatOpen = action.payload;
         state.isOpen = true;

@@ -4,7 +4,14 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   profile: [
-
+    {
+      name: "Sayak Sarkar",
+      year: "junior (3rd) year",
+      college: "Institute of Engineering and Management, Kolkata",
+      profession: "Full-Stack Web-Developer",
+      aboutDesktop: "As a full-stack web developer and graphic designer, I bring a unique blend of technical expertise and creativity to my work. I am a national award winner in poster design. I am passionate about crafting engaging and user-friendly web experiences while creating visually stunning designs. With a strong foundation in coding and design principles, I strive to deliver high-quality solutions that meet client's needs and exceed their expectations. I am a proactive and driven individual, always seeking opportunities to expand my knowledge and skill set. I thrive on the excitement of learning new things and meeting new people in the ever-evolving world of technology. I am thrilled to embrace the future with enthusiasm, as I continue to grow and make a positive impact through my work.",
+      aboutMobile: "I'm Sayak, a sophomore CSE undergrad at the Institute of Engineering & Management, Kolkata. As a full-stack web developer and graphic designer, I bring together technical expertise and creativity. I love crafting captivating user experiences and visually stunning designs. I am a national award winner in poster design. I'm always seeking opportunities to learn and grow in the ever-changing world of technology. Let's make a positive impact together!"
+    }
   ],
   education: [
     {folderName: "School - Qualification",

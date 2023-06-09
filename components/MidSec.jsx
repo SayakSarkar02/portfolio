@@ -7,6 +7,7 @@ import MainBody from "./MainBody";
 
 import { useSelector, useDispatch } from "react-redux";
 import { arrSelect } from "@app/GlobalRedux/Features/sidebar/sidebarSlice";
+import {closeSideBarMenu} from "@app/GlobalRedux/Features/sidebar/sidebarSlice";
 
 const MidSec = () => {
   const open = useSelector((state) => state.sidebar.whatOpen);
@@ -171,6 +172,10 @@ const MidSec = () => {
 
         <div>
           <div
+           onClick={() => {
+            dispatch(arrSelect(-1));
+            dispatch(closeSideBarMenu());
+          }}
             className={
               " flex items-center justify-center text-vs-white-2 w-full py-3 hover:text-vs-white-1 hover:cursor-pointer"
             }
