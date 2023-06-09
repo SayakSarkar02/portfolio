@@ -16,7 +16,6 @@ const Education = () => {
     <div className="lg:text-xl">
     <span className="text-2xl text-vs-yellow">I studied </span><span className=" text-vs-blue-1 text-2xl"> {data.title} </span> <br /> from  <span className=" text-vs-purple text-2xl"> {data.description} </span>
     <br />
-    <br />
     Which is an <span className="text-vs-purple"> {data.board} </span>board school,
     <br />
     {/* Where I spent the best years of my life, learning and exploring the world. */}
@@ -26,8 +25,8 @@ const Education = () => {
     : <div className="lg:text-xl">
       <span className="text-2xl text-vs-yellow">I am studying <br /> </span><span className=" text-vs-blue-1 text-2xl"> {data.title} </span> <br /> from  <span className=" text-vs-purple text-2xl"> {data.description} </span>
       <br />
-      <br />
       Which is under the <span className="text-vs-purple"> {data.board} </span> university,
+      <br />
       <br />
       I am currently exploring and learning about Computer Science here.
     </div>

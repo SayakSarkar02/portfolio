@@ -1,5 +1,5 @@
-import samp from "../../../public/assets/icons/meet/samp.png"
-import sayak from "../../../public/assets/icons/meet/sayak.png"
+import samp from "@public/assets/icons/meet/samp.png"
+import sayak from "@public/assets/icons/meet/sayak.png"
 import Image from "next/image"
 const Meet = ({setMeet, stop}) => {
 

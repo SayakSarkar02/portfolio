@@ -3,8 +3,8 @@
 import useSound from 'use-sound';
 import { useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
-// import jotunamila from '@assets/jotunamila.mp3';
-import kharahu from '@public/assets/kharahu.mp3';
+// import jotunamila from '@assets/music/jotunamila.mp3';
+import kharahu from '@public/assets/music/kharahu.mp3';
 
 import { useDispatch } from "react-redux";
 import {toggleTerminal} from "@app/GlobalRedux/Features/terminal/terminalToggle";
