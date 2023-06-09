@@ -2,12 +2,13 @@
 
 import { useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
+import { SocialIcon } from 'react-social-icons';
 import {setBody} from "@app/GlobalRedux/Features/sidebar/sidebarMenu"
 import { motion } from 'framer-motion';
 import { toggleSideBarMenu } from "@app/GlobalRedux/Features/sidebar/sidebarSlice"
 
 
-const MenuCard = ({keyMap, name, type, files}) => {
+const MenuCard = ({keyMap, name, type, files, content}) => {
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
 
@@ -19,9 +20,11 @@ const MenuCard = ({keyMap, name, type, files}) => {
         </svg>
         }
         {type==="file" &&
-        <svg className="w-3 text-yellow-500 ml-3" width="14" height="18" viewBox="0 0 14 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M7.875 6.3V1.35L12.6875 6.3M1.75 0C0.77875 0 0 0.801 0 1.8V16.2C0 16.6774 0.184374 17.1352 0.512563 17.4728C0.840752 17.8104 1.28587 18 1.75 18H12.25C12.7141 18 13.1592 17.8104 13.4874 17.4728C13.8156 17.1352 14 16.6774 14 16.2V5.4L8.75 0H1.75Z" fill="currnetColor"/>
-        </svg>}
+        <div className="ml-3 w-6 h-6 overflow-hidden flex items-center justify-center">
+          {content.title==="Github"? <SocialIcon fgColor="" bgColor="white" style={{width:"20px", height: "20px"}} url={content.link} />:
+          <SocialIcon fgColor="transparent" style={{width:"20px", height: "20px"}} url={content.link} />}
+        </div>
+        }
         <h3 className="text-sm text-vs-white-1">{name}</h3>
       </div>
       {open && files?.map((file, index) => (
@@ -31,7 +34,7 @@ const MenuCard = ({keyMap, name, type, files}) => {
         transition={{ duration: 0.5, delay: index * 0.1 }}
         onClick={()=>{dispatch(setBody({data:file?.content, type:"contact"}));
         window.innerWidth<=640 && dispatch(toggleSideBarMenu());}}>
-        <MenuCard keyMap={index} name={file.fileName} type={"file"}/>
+        <MenuCard keyMap={index} name={file.fileName} type={"file"} content={file.content}/>
         </motion.div>
       ))}
     </div>

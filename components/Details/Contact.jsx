@@ -1,6 +1,8 @@
 "use client"
 
 import { useSelector } from "react-redux"
+import { SocialIcon } from 'react-social-icons';
+
 
 const Contact = () => {
 
@@ -10,15 +12,18 @@ const Contact = () => {
   return (<>
     {type==="contact"?
       <div>
-      Wanna have a talk with me on {data.title}?
+        <div className="flex flex-row items-center gap-4 flex-wrap">
+          {data.title==="Github"? <SocialIcon fgColor="" bgColor="white" url={data.link} />:
+          <SocialIcon fgColor="transparent" url={data.link} />}
+        
+          <h3 className="text-2xl">Wanna have a talk with me on <span className="text-vs-yellow"> (<a rel="non-ferrer" target="_blank" href={data.link} className="text-vs-blue-2 hover:text-vs-blue-1">{data.title}</a>) </span> ?</h3>
+          </div>
       <br />
-      <a rel="non-ferrer" target="_blank" href={data.link}><button className="text-vs-white-1 bg-vs-gray-2 px-4 py-2 rounded-lg my-2">Go to {data.title}</button></a>
       <br />
-      {data.description}
+      <span className="text-lg lg:text-xl">{data.description}</span>
       <br />
     </div>:
     <div className="lg:text-xl">
-    {/* <span className="text-2xl">Hey There!</span>  */}
     <span className="text-2xl text-vs-yellow">Hey</span><span className=" text-vs-blue-1 text-2xl">(There)</span><span className=" text-vs-yellow text-2xl">!</span>
     <br />
     <br />
