@@ -46,7 +46,46 @@ const initialState = {
     },
   ],
   projects: [
-
+    {
+      id: 1,
+      title: "Medbase",
+      isComplete: true,
+      description: "lorem30 hi this is a test description",
+      tagline: "All your Mmdical documents under one roof.",
+      logo: "https://res.cloudinary.com/dj3p6sirz/image/upload/v1686422544/MedBase_immhyy.png",
+      img: "",
+      stacks: ["React","NodeJS", "MongoDB", "LightHouse", "IPFS", "HTML", "CSS"],
+      links: [
+        {
+          name: "Github",
+          link: ""
+        },
+        {
+          name: "Visit",
+          link: "https://medbase-ii.firebaseapp.com/"
+        }
+      ]
+    },
+    {
+      id: 2,
+      title: "Ed360",
+      isComplete: true,
+      description: "This is another test is a test description",
+      tagline: "One stop solution to unorganised learning.",
+      logo: "https://res.cloudinary.com/dj3p6sirz/image/upload/v1686423152/Screenshot_2023-06-11_at_12.22.24_AM_uc8oel.png",
+      img: "",
+      stacks: ["NextJS","NodeJS", "MongoDB", "StoryBloc", "Tailwind"],
+      links: [
+        {
+          name: "Github",
+          link: ""
+        },
+        {
+          name: "Visit",
+          link: "https://ed360-teacher-frontend.vercel.app/dashboard"
+        }
+      ]
+    },
   ],
   techstacks: [
 
