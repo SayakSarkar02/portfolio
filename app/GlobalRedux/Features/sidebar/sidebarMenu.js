@@ -91,7 +91,7 @@ const initialState = {
     {
       id: 3,
       title: "HUDN",
-      isComplete: true,
+      isComplete: false,
       description: `HUDN is an innovative platform that I had the privilege of working on as a full-stack developer. It serves as a unique showspace for side projects, providing a space where individuals can showcase their creative endeavors, prototypes, and personal ventures. HUDN allows users to display their work in an interactive and visually appealing manner, fostering a community of like-minded individuals who appreciate and support the spirit of innovation. With its emphasis on user experience and the seamless presentation of side projects, HUDN has become a go-to platform for discovering inspiring creations and connecting with talented individuals from various fields.`,
       logo: "https://res.cloudinary.com/dj3p6sirz/image/upload/v1687674006/Group_64_wo3azk.png",
       img: "",
@@ -99,14 +99,14 @@ const initialState = {
       links: [
         {
           name: "Visit",
-          link: "https://ed360-teacher-frontend.vercel.app/dashboard"
+          link: "https://hudn.space"
         }
       ]
     },
     {
       id: 4,
       title: "BeastVerse",
-      isComplete: true,
+      isComplete: false,
       description: `Beast Verse is a Play-to-earn PvP NFT game, built on the Polygon Blockchain.
       We are creating a virtual world where players can explore different terrains, choose their favorite beasts and fight their way to victory. Our use of the Polygon Blockchain ensures that the game is secure and transparent , which is essential for players who value their personal information and assets.`,
       logo: "https://res.cloudinary.com/dj3p6sirz/image/upload/v1687674018/logo_1_ujctft.png",
@@ -115,7 +115,7 @@ const initialState = {
       links: [
         {
           name: "Visit",
-          link: "https://ed360-teacher-frontend.vercel.app/dashboard"
+          link: "https://beastversegame.com"
         }
       ]
     },
