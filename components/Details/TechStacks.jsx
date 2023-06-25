@@ -22,18 +22,18 @@ import Image from 'next/image'
 
 const Card = ({title, img}) =>{
   return (
-    <div className="bg-vs-white-2/10 p-2 rounded-lg w-28 flex flex-col items-center transform transition-all duration-400 hover:scale-110 hover:bg-vs-white-2/20 hover:text-white">
-        <div className=" w-20 h-20 rounded-md overflow-clip">
-          <Image src={img} alt="react" className="w-full h-full object-contain " />
+    <div className="bg-vs-white-2/10 p-2 rounded-lg w-28 flex flex-col max-sm:flex-row max-sm:w-full items-center transform transition-all duration-400 hover:scale-110 hover:bg-vs-white-2/20 hover:text-white">
+        <div className="sm:w-20 sm:h-20 max-sm:w-12 max-sm:h-10 rounded-md overflow-clip flex items-center justify-center">
+          <Image src={img} alt="react" className="w-full h-full object-contain max-sm:w-[60%]" />
         </div>
-        <h3 className="mt-2 text-center">{title}</h3>
-      </div>
+        <h3 className="mt-2 max-sm:mt-0 text-center">{title}</h3>
+    </div>
   )
 }
 
 const TechStacks = () => {
   return (<>
-    <div className="p-5">
+    <div className="sm:p-5">
       <h3 className="text-3xl text-vs-yellow">Tech Stacks</h3>
 
       <h3 className="text-xl text-vs-blue-2 mt-10 mb-4">[ <span className="text-vs-white-1">Languages</span> ]</h3>

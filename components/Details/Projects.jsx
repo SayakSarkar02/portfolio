@@ -12,14 +12,13 @@ const Projects = () => {
   <>
     {
       type==="projects"? 
-      <div>
-        {/* <h3>{JSON.stringify(data)}</h3> */}
-        <div className="flex flex-row items-center gap-8">
-        <img src={data.logo} className="w-32" alt="" />
+      <div className=" flex flex-col max-sm:items-center">
+        <div className="flex sm:flex-row max-sm:flex-col max-sm:text-center items-center gap-8">
+          <img src={data.logo} className="w-32" alt="" />
         <div>
         <h1 className="text-5xl text-vs-yellow leading-none">{data.title}</h1>
-        <h2 className="text-xl text-vs-blue-1 leading-none">{data.tagline}</h2>
-        <div className="flex flex-row gap-2 mt-4">
+        <h2 className="text-xl text-vs-blue-1 leading-none max-sm:text-center max-sm:mx-auto ">{data.tagline}</h2>
+        <div className="flex flex-row gap-2 mt-4 max-sm:flex-wrap max-sm:justify-center max-sm:mx-auto">
           {
             data.stacks.map((stack)=>(
               <div>
@@ -32,7 +31,7 @@ const Projects = () => {
         </div>
         <br />
         <h3 className="text-xl text-vs-white-1">{data.description}</h3>
-        <div className="flex flex-row gap-2 mt-8">
+        <div className="flex flex-row gap-2 mt-8 max-sm:mx-auto">
           {
             data.links.map((link)=>(
               <div>

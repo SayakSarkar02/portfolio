@@ -190,7 +190,7 @@ const initialState = {
       ],
       img: "",
       logo: "https://res.cloudinary.com/dj3p6sirz/image/upload/v1687708241/Untitled_design_23_l3ersw.png",
-      stacks: [],
+      stacks: ["Graphic Designer", "UI-UX Designer"],
       links: [
         {
           name: "Website",

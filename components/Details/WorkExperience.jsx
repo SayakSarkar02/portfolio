@@ -12,14 +12,14 @@ const WorkExperience = () => {
   <>
     {
       type==="workexperience"? 
-      <div>
+      <div className=" flex flex-col max-sm:items-center ">
         {/* <h3>{JSON.stringify(data)}</h3> */}
-        <div className="flex flex-row items-center gap-8">
+        <div className="flex flex-row items-center gap-8 sm:flex-row max-sm:flex-col max-sm:text-center">
         <img src={data.logo} className="w-32" alt="" />
         <div>
-        <h1 className="text-5xl text-vs-yellow leading-none">{data.title}</h1>
-        <h2 className="text-xl text-vs-blue-1 leading-none">{data.tagline}</h2>
-        <div className="flex flex-row gap-2 mt-4">
+        <h1 className="text-5xl max-sm:text-4xl text-vs-yellow leading-none ">{data.title}</h1>
+        <h2 className="text-xl text-vs-blue-1 leading-none max-sm:text-center max-sm:mx-auto">{data.tagline}</h2>
+        <div className="flex flex-row gap-2 mt-4 max-sm:flex-wrap max-sm:justify-center max-sm:mx-auto">
           {
             data.stacks.map((stack)=>(
               <div>
