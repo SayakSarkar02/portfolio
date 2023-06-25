@@ -119,6 +119,21 @@ const initialState = {
         }
       ]
     },
+    {
+      id: 5,
+      title: "AstuteAI",
+      isComplete: true,
+      description: `Astute AI is a smart AI tool designed to help users in a variety of tasks. It uses advanced AI and Natural Language Processing to understand user queries and respond with relevant information in a conversational manner. With its simple yet intuitive user interface and deep understanding of user needs.`,
+      logo: "https://res.cloudinary.com/dj3p6sirz/image/upload/v1687683843/Screenshot_2023-06-25_at_2.33.42_PM_gjqtha.png",
+      img: "",
+      stacks: ["Tailwind", "HTML", "CSS", "Flask"],
+      links: [
+        {
+          name: "Visit",
+          link: "https://astuteai.raihankhan.dev/m"
+        }
+      ]
+    },
   ],
   techstacks: [
 

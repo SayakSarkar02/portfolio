@@ -50,6 +50,7 @@ const MidSec = () => {
             onClick={() => {
               dispatch(arrSelect(0));
             }}
+            title="Education Qualification"
             className={
               (open == 0 && isOpen ? selected : deselected) +
               " flex items-center justify-center w-full py-3 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"
@@ -67,6 +68,7 @@ const MidSec = () => {
           </button>
 
           <button
+            title="Achievements"
             onClick={() => {
               dispatch(arrSelect(1));
             }}
@@ -92,6 +94,7 @@ const MidSec = () => {
             onClick={() => {
               dispatch(arrSelect(2));
             }}
+            title="Contacts"
             className={
               (open == 2 && isOpen ? selected : deselected) +
               " flex items-center justify-center text-vs-white-2 w-full py-3 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"
@@ -113,6 +116,7 @@ const MidSec = () => {
             onClick={() => {
               dispatch(arrSelect(3));
             }}
+            title="Projects"
             className={
               (open == 3 && isOpen ? selected : deselected) +
               " flex items-center justify-center text-vs-white-2 w-full py-3 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"
@@ -132,7 +136,9 @@ const MidSec = () => {
           <button
             onClick={() => {
               dispatch(arrSelect(4));
+              dispatch(closeSideBarMenu());
             }}
+            title="Tech Stacks"
             className={
               (open == 4 && isOpen ? selected : deselected) +
               " flex items-center justify-center text-vs-white-2 w-full py-3 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"
@@ -153,6 +159,7 @@ const MidSec = () => {
             onClick={() => {
               dispatch(arrSelect(5));
             }}
+            title="Experience"
             className={
               (open == 5 && isOpen ? selected : deselected) +
               " flex items-center justify-center text-vs-white-2 w-full py-3 hover:bg-white/5 hover:text-vs-white-1 hover:cursor-pointer"
