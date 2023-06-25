@@ -13,7 +13,7 @@ const MenuCard = ({keyMap, desc, logo, links, stacks, title, data}) => {
     window.innerWidth<=640 && dispatch(toggleSideBarMenu());
     }}>
       <div className="flex flex-row items-center gap-4 cursor-pointer select-none pl-4 py-1 hover:bg-vs-gray-3">
-        <img src={logo} alt="medbase icon" className={`w-10 rounded-full ${title}`}/>
+        <img src={logo} alt="medbase icon" className={`w-10 rounded-full ${title==="Google Developer Student Clubs" && "bg-white"}`}/>
         <div className="flex flex-col overflow-clip mr-4">
           <h3 className="text-base text-vs-white-1">{title}</h3>
           <h3 className="text-sm text-vs-white-2 overflow-hidden truncate text-ellipsis w-full">{desc}</h3>

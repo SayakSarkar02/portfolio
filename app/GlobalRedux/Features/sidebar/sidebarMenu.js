@@ -27,7 +27,9 @@ const initialState = {
     },
   ],
   achievements: [
+    {
 
+    }
   ],
   contact: [
     {folderName: "Professional",
@@ -179,25 +181,6 @@ const initialState = {
     },
     {
       id: 3,
-      title: "IIC-IEM | Webdevelopment Team",
-      tagline: "Institute Innovation Cell - IEM",
-      description: [
-        "Worked as a frontend web-developer in IIC-IEM developed their website in React and Tailwind.",
-        "Collaborated with the UI-UX team to deliver a engaging interface for the users.",
-        "Learning, exlporing and research new frameworks to implement and make the web development workflow more efficient."
-      ],
-      img: "",
-      logo: "https://res.cloudinary.com/dj3p6sirz/image/upload/v1687699313/iiciem_yiblwz.png",
-      stacks: ["Frontend Developer", "UI-UX Designer","Graphic Designer"],
-      links: [
-        {
-          name: "Website",
-          link: "https://iic-iem.vercel.app/"
-        }
-      ]
-    },
-    {
-      id: 4,
       title: "Google Developer Student Clubs",
       tagline: "Graphics Core Team",
       description: [
@@ -215,6 +198,26 @@ const initialState = {
         }
       ]
     },
+    {
+      id: 4,
+      title: "IIC-IEM | Webdevelopment Team",
+      tagline: "Institute Innovation Cell - IEM",
+      description: [
+        "Worked as a frontend web-developer in IIC-IEM developed their website in React and Tailwind.",
+        "Collaborated with the UI-UX team to deliver a engaging interface for the users.",
+        "Learning, exlporing and research new frameworks to implement and make the web development workflow more efficient."
+      ],
+      img: "",
+      logo: "https://res.cloudinary.com/dj3p6sirz/image/upload/v1687699313/iiciem_yiblwz.png",
+      stacks: ["Frontend Developer", "UI-UX Designer","Graphic Designer"],
+      links: [
+        {
+          name: "Website",
+          link: "https://iic-iem.vercel.app/"
+        }
+      ]
+    },
+    
   ],
   body: [
 

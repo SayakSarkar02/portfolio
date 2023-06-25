@@ -22,7 +22,7 @@ const Default = () => {
     <span className="max-sm:hidden">
     As a <span className="text-vs-blue-2"> full-stack web developer</span> and <span className="text-vs-blue-2"> graphic designer </span>, I bring a unique blend of technical expertise and creativity to my work. I am a <span className="text-yellow-200"> national award winner in poster design </span>. I am passionate about crafting engaging and user-friendly web experiences while creating visually stunning designs. With a strong foundation in coding and design principles, I strive to deliver high-quality solutions that meet client's needs and exceed their expectations. I am a proactive and driven individual, always seeking opportunities to expand my knowledge and skill set. 
     </span>
-    <span className="sm:hidden">
+    <span className="sm:hidden pb-40">
       <br />
       As a <span className="text-vs-blue-2">full-stack web developer</span> and <span className="text-vs-blue-2"> graphic designer </span> , I bring together technical expertise and creativity. I love crafting captivating user experiences and visually stunning designs. I am a national award winner in poster design. I'm always seeking opportunities to learn and grow in the ever-changing world of technology. Let's make a positive impact together!
     </span>
