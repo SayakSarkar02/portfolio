@@ -139,7 +139,82 @@ const initialState = {
 
   ],
   workexperience: [
-
+    {
+      id: 1,
+      title: "HUDN",
+      tagline: "Showspace for side projects",
+      description: [
+        "Built a robust and user-friendly interface for showcasing sideprojects using React, Node.js, Tailwind CSS, and MongoDB.",
+        "Led the migration of HUDN's techstack to Next.js, ReactQuery, and Redux, improving performance and scalability.",
+        "Played a significant role in shaping HUDN's success and ensuring a seamless user experience through active participation in both the initial development and subsequent migration.",
+      ],
+      logo: "https://res.cloudinary.com/dj3p6sirz/image/upload/v1687674006/Group_64_wo3azk.png",
+      img: "",
+      stacks: ["ReactJS", "NodeJS" , "MongoDB", "Firebase", "NextJS", "NextAuth", "ReactQuery", "Redux", "Tailwind"],
+      links: [
+        {
+          name: "Website",
+          link: "https://hudn.space"
+        }
+      ]
+    },
+    {
+      id: 2,
+      title: "BeastVerse",
+      tagline: "PvP NFT Game in polygon chain",
+      description: [
+        "Developed a dynamic and immersive website using React and Node.js to deliver an engaging user experience.",
+        "Collaborated with the backend development team to establish seamless communication, data exchange between the website and servers and also ensure stability and scalability.",
+        "Gained knowledge in the web3 domain and solidity as it was needed to integrate decentralised apps to the frontend."
+      ],
+      img: "",
+      logo: "https://res.cloudinary.com/dj3p6sirz/image/upload/v1687674018/logo_1_ujctft.png",
+      stacks: ["ReactJS", , "NodeJS" , "MongoDB", "Firebase", "NextJS", "NextAuth", "ReactQuery", "Redux", "Tailwind"],
+      links: [
+        {
+          name: "Website",
+          link: "https://beastversegame.com"
+        }
+      ]
+    },
+    {
+      id: 3,
+      title: "IIC-IEM | Webdevelopment Team",
+      tagline: "Institute Innovation Cell - IEM",
+      description: [
+        "Worked as a frontend web-developer in IIC-IEM developed their website in React and Tailwind.",
+        "Collaborated with the UI-UX team to deliver a engaging interface for the users.",
+        "Learning, exlporing and research new frameworks to implement and make the web development workflow more efficient."
+      ],
+      img: "",
+      logo: "https://res.cloudinary.com/dj3p6sirz/image/upload/v1687699313/iiciem_yiblwz.png",
+      stacks: ["Frontend Developer", "UI-UX Designer","Graphic Designer"],
+      links: [
+        {
+          name: "Website",
+          link: "https://iic-iem.vercel.app/"
+        }
+      ]
+    },
+    {
+      id: 4,
+      title: "Google Developer Student Clubs",
+      tagline: "Graphics Core Team",
+      description: [
+        "Worked as a frontend web-developer in IIC-IEM developed their website in React and Tailwind.",
+        "Collaborated with the UI-UX team to deliver a engaging interface for the users.",
+        "Learning, exlporing and research new frameworks to implement and make the web development workflow more efficient."
+      ],
+      img: "",
+      logo: "https://res.cloudinary.com/dj3p6sirz/image/upload/v1687708241/Untitled_design_23_l3ersw.png",
+      stacks: [],
+      links: [
+        {
+          name: "Website",
+          link: "https://gdsc.community.dev/institute-of-engineering-management-kolkata/"
+        }
+      ]
+    },
   ],
   body: [
 

@@ -44,7 +44,11 @@ const Projects = () => {
         
       </div>
       : 
-      <div>Default Projects</div>
+      <div className="">
+        <h3 className="text-3xl text-vs-white-1 mb-4"> Hi, wanna explore some of my projects? </h3>
+        <h3 className="text-xl text-vs-yellow mb-12"> Use the <span className="text-vs-blue-2"> ( <span className="text-vs-purple"> Sidebar </span> ) </span> to navigate through all my <span className="text-vs-blue-2"> [ <span className="text-vs-white-1"> Projects </span> ] </span></h3>
+        <h3 className="text-xl text-vs-blue-1"> I like to keep tinkering with new technologies, these are just few of many projects I came up with.</h3>
+      </div>
     }
   </>
   )
