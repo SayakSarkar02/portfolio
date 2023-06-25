@@ -30,8 +30,8 @@ const Projects = () => {
         </div>
         </div>
         <br />
-        <h3 className="text-xl text-vs-white-1">{data.description}</h3>
-        <div className="flex flex-row gap-2 mt-8 max-sm:mx-auto">
+        <h3 className="text-xl text-vs-white-1 max-sm:text-base max-sm:text-justify">{data.description}</h3>
+        <div className="flex flex-row gap-2 mt-8 max-sm:mx-auto max-sm:pb-40">
           {
             data.links.map((link)=>(
               <div>

@@ -13,7 +13,6 @@ const WorkExperience = () => {
     {
       type==="workexperience"? 
       <div className=" flex flex-col max-sm:items-center ">
-        {/* <h3>{JSON.stringify(data)}</h3> */}
         <div className="flex flex-row items-center gap-8 sm:flex-row max-sm:flex-col max-sm:text-center">
         <img src={data.logo} className="w-32" alt="" />
         <div>
@@ -31,12 +30,12 @@ const WorkExperience = () => {
         </div>
         </div>
         <br />
-        <ul className="text-xl text-vs-white-1">
+        <ul className="text-xl text-vs-white-1 max-sm:text-base max-sm:text-justify">
           {data.description.map((list)=>(
             <li className=" list-disc my-3">{list}</li>
           ))}
         </ul>
-        <div className="flex flex-row gap-2 mt-8">
+        <div className="flex flex-row gap-2 mt-8 max-sm:pb-40">
           {
             data.links.map((link)=>(
               <div>
