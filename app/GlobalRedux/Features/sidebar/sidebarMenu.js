@@ -50,15 +50,15 @@ const initialState = {
       id: 1,
       title: "Medbase",
       isComplete: true,
-      description: "lorem30 hi this is a test description",
-      tagline: "All your Mmdical documents under one roof.",
+      description: "MedBase is an online platform that securely maintains and manages patient medical records using a decentralized storage protocol called IPFS. It ensures the tamper-proof nature of records while allowing easy accessibility from anywhere in the world. Healthcare professionals can access patients' complete medical history, enabling better-informed decisions and coordinated care. Patients have control over their data and can securely share it with healthcare providers without intermediaries. MedBase revolutionizes medical record management by combining decentralized storage and easy accessibility, providing a robust platform for maintaining and sharing medical records.",
+      tagline: "All your Medical documents under one roof.",
       logo: "https://res.cloudinary.com/dj3p6sirz/image/upload/v1686422544/MedBase_immhyy.png",
       img: "",
       stacks: ["React","NodeJS", "MongoDB", "LightHouse", "IPFS", "HTML", "CSS"],
       links: [
         {
           name: "Github",
-          link: ""
+          link: "https://github.com/SayakSarkar02/Medbase"
         },
         {
           name: "Visit",
@@ -70,7 +70,9 @@ const initialState = {
       id: 2,
       title: "Ed360",
       isComplete: true,
-      description: "This is another test is a test description",
+      description: `There are several problems that students face on a day-to-day basis that affect their academic success. Disorganization, limited access to study resources, and lack of motivation.
+      These problems lead to missed deadlines and a lack of productivity, difficulty in effectively completing assignments, and ruins the overall learning experience.
+      Ed360 is a platform that can help students better manage their studies, by providing them REWARDS and INCENTIVES for doing tasks/assignments on time, attending classes regularly, submitting assignments on time and solving the doubts of fellow batch mates among other things.`,
       tagline: "One stop solution to unorganised learning.",
       logo: "https://res.cloudinary.com/dj3p6sirz/image/upload/v1686423152/Screenshot_2023-06-11_at_12.22.24_AM_uc8oel.png",
       img: "",
@@ -78,8 +80,39 @@ const initialState = {
       links: [
         {
           name: "Github",
-          link: ""
+          link: "https://github.com/SayakSarkar02/Ed360"
         },
+        {
+          name: "Visit",
+          link: "https://ed360-teacher-frontend.vercel.app/dashboard"
+        }
+      ]
+    },
+    {
+      id: 3,
+      title: "HUDN",
+      isComplete: true,
+      description: `HUDN is an innovative platform that I had the privilege of working on as a full-stack developer. It serves as a unique showspace for side projects, providing a space where individuals can showcase their creative endeavors, prototypes, and personal ventures. HUDN allows users to display their work in an interactive and visually appealing manner, fostering a community of like-minded individuals who appreciate and support the spirit of innovation. With its emphasis on user experience and the seamless presentation of side projects, HUDN has become a go-to platform for discovering inspiring creations and connecting with talented individuals from various fields.`,
+      logo: "https://res.cloudinary.com/dj3p6sirz/image/upload/v1687674006/Group_64_wo3azk.png",
+      img: "",
+      stacks: ["ReactJS", "NodeJS" , "MongoDB", "Firebase", "NextJS", "NextAuth", "ReactQuery", "Redux", "Tailwind"],
+      links: [
+        {
+          name: "Visit",
+          link: "https://ed360-teacher-frontend.vercel.app/dashboard"
+        }
+      ]
+    },
+    {
+      id: 4,
+      title: "BeastVerse",
+      isComplete: true,
+      description: `Beast Verse is a Play-to-earn PvP NFT game, built on the Polygon Blockchain.
+      We are creating a virtual world where players can explore different terrains, choose their favorite beasts and fight their way to victory. Our use of the Polygon Blockchain ensures that the game is secure and transparent , which is essential for players who value their personal information and assets.`,
+      logo: "https://res.cloudinary.com/dj3p6sirz/image/upload/v1687674018/logo_1_ujctft.png",
+      img: "",
+      stacks: ["ReactJS", , "NodeJS" , "MongoDB", "Firebase", "NextJS", "NextAuth", "ReactQuery", "Redux", "Tailwind"],
+      links: [
         {
           name: "Visit",
           link: "https://ed360-teacher-frontend.vercel.app/dashboard"

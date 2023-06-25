@@ -36,7 +36,7 @@ const Projects = () => {
           {
             data.links.map((link)=>(
               <div>
-                <a href={link.link} className={`text-white font-semibold text-2xl transition-all duration-500 ease-in shadow-lg shadow-black/50 ${link.name==="Github"? " bg-[#e2e2e2] hover:bg-[#a0a0a0] text-vs-gray-6 ": " bg-blue-600 hover:bg-blue-700 "} px-8 py-2 rounded-full`}>{link.name}</a>
+                <a href={link.link} className={`text-white font-semibold text-2xl transition-all duration-500 ease-in shadow-lg shadow-black/50 ${link.name==="Github"? " bg-[#000000] hover:bg-[#0c0c0c] text-vs-gray-6 ": " bg-blue-600 hover:bg-blue-700 "} px-8 py-2 rounded-full`}>{link.name}</a>
               </div>
             ))
           }
