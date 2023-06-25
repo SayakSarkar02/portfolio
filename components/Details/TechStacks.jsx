@@ -33,7 +33,7 @@ const Card = ({title, img}) =>{
 
 const TechStacks = () => {
   return (<>
-    <div className="sm:p-5">
+    <div className="sm:p-5 max-sm:pb-20">
       <h3 className="text-3xl text-vs-yellow">Tech Stacks</h3>
 
       <h3 className="text-xl text-vs-blue-2 mt-10 mb-4">[ <span className="text-vs-white-1">Languages</span> ]</h3>
