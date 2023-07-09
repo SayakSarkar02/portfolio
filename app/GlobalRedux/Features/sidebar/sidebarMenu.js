@@ -28,8 +28,54 @@ const initialState = {
   ],
   achievements: [
     {
-
-    }
+      id: 1,
+      title: "Nights & Weekends [Top-60]",
+      tagline: "Buildspace - 2023",
+      description: "",
+      logo: "https://res.cloudinary.com/dj3p6sirz/image/upload/v1688912055/Untitled_design_31_e4dbnu.png",
+    },
+    {
+      id: 2,
+      title: "HTF3.0 Storyblok Track Winner",
+      tagline: "Major League Hacking - 2023",
+      description: "",
+      logo: "https://res.cloudinary.com/dj3p6sirz/image/upload/v1687711756/Untitled_design_27_tnssth.png",
+    },
+    {
+      id: 3,
+      title: "HTF3.0 Godaddy Track Winner",
+      tagline: "Major League Hacking - 2023",
+      description: "",
+      logo: "https://res.cloudinary.com/dj3p6sirz/image/upload/v1687711756/Untitled_design_26_gnkgff.png",
+    },
+    {
+      id: 4,
+      title: "HTF3.0 Postman Track Winner",
+      tagline: "Major League Hacking - 2023",
+      description: "",
+      logo: "https://res.cloudinary.com/dj3p6sirz/image/upload/v1687711756/Untitled_design_28_ojxbee.png",
+    },
+    {
+      id: 5,
+      title: "HTF3.0 Peerlist Track Winner",
+      tagline: "Major League Hacking - 2023",
+      description: "",
+      logo: "https://res.cloudinary.com/dj3p6sirz/image/upload/v1687711756/Untitled_design_25_xwfnhz.png",
+    },
+    {
+      id: 6,
+      title: "HTM3.0 Lighthouse Track Winner",
+      tagline: "Major League Hacking - 2022",
+      description: "",
+      logo: "https://res.cloudinary.com/dj3p6sirz/image/upload/v1687711757/htm_gxivef.png",
+    },
+    {
+      id: 7,
+      title: "National Award in Poster Design",
+      tagline: "Government of India - 2017",
+      description: "",
+      logo: "https://res.cloudinary.com/dj3p6sirz/image/upload/v1687711787/Untitled_design_24_xkan1y.png",
+    },
   ],
   contact: [
     {folderName: "Professional",
